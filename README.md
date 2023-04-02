@@ -13,12 +13,12 @@ To be able to teach a new board I would expect these examples: Basically my cour
 3. Any 2 wire (variable resistor) sensor connected as a voltage divider and the results printed to the Serial Monitor
 4. DAC to ADC both Analog and Digital printout to serial monitor
 5. Basic programming examples VIDEO-FLAC (Variables, input-output, decisions, events, Objects-Structs, Functions, Loops, Arrays, Classes)
-6. WiFi server example, If WiFi not on the board how to connect a module
+6. WiFi server example, If WiFi not on the board how to connect a module  
 6B. Possibly a Simple BLE example (I don't teach this)
 7. Servo 
-8. Simple working Transistor example
-9. Small motor driver
-10. Big motor driver
+8. Simple working Transistor example  
+9. Small motor driver  
+10. Big motor driver  
 10b. Possibly a 120 V relay example (I don't teach this)
 11. Stepper motor example
 12. Serial I2C (SDA, SCL) example I do the Grove OLED
@@ -27,9 +27,10 @@ To be able to teach a new board I would expect these examples: Basically my cour
 15. Grove GPS
 16. Accelerometer
 17. FSLP
-18. Grayscale fast OLED
+18. Grayscale fast OLED with MCU camera
 19. E-ink display
 20. TFT touch screen
+21. Multiplexers, both GPIO input, oputput, Analog input, output if you can find any (I don't need to teach this yet)
 21. Other IOT connectivity examples, If supported by EdgeImpuulse, use with Serial-Putty, specialty attachements like SD-cards, Special ram, SDRAM etc
 
 
