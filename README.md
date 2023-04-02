@@ -31,7 +31,7 @@ To be able to teach a new board I would expect these examples: Basically my cour
 19. E-ink display
 20. TFT touch screen
 21. SD Card 
-22. 22. Ethernet if applicable
+22. Ethernet if applicable
 23. Multiplexers, both GPIO: input, output, Analog: input, output if you can find any (I don't teach this yet)
 24. Other IOT connectivity examples such as websockets, MQTT connectivity, LoRa and LoRaWan, Radio etc
 
