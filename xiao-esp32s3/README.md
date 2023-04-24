@@ -6,11 +6,22 @@ This XIAO Esp32s3 for $15 USD shows amazing potentail for Robotics and Machine L
 
 [xiao-esp32s3/edu-launch-esp32s3.csv](xiao-esp32s3/edu-launch-esp32s3.csv)
 
+##The getting started XIAO Sense is very good. Look at the examples
+https://wiki.seeedstudio.com/xiao_esp32s3_getting_started
 
 
 
+##NOTE: For new programs hold boot button while plugging in the USB cable. I have a small 3D Printed clip to help hold the boot button
+
+Then after the program is uploaded unplug and plug in the USB cable again but without holding the boot button (YOu could push the reset button but it is hard to push.)
+
+##Note: might as well activate the PSRAM  Tools--> PSRAM --> OPI PSRAM
 
 
+This line is needed for camera stuff
+```
+#define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
+```
 
 
 
