@@ -39,3 +39,12 @@ To be able to teach a new board I would expect these examples: Basically my cour
 
 After all these examples are working we can say that the new board is mcu-stable-edu-launch ready for High School and University classrooms
 
+
+
+Iages in JPG format working along with saving to the SD card and WiFi  and basic BLE.
+
+
+![image10](https://user-images.githubusercontent.com/5605614/234101828-6c487024-0c76-4797-b660-688db3c12ff3.jpg)
+![image6](https://user-images.githubusercontent.com/5605614/234101845-e76cf515-bbe5-4c54-a381-1945e697e21f.jpg)
+
+
