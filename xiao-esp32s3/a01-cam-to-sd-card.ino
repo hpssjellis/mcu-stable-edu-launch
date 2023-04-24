@@ -48,8 +48,8 @@ void writeFile(fs::FS &fs, const char * path, uint8_t * data, size_t len){
 
 void setup() {
   Serial.begin(115200);
-  while(!Serial); // When the serial monitor is turned on, the program starts to execute
-
+  // while(!Serial); // When the serial monitor is turned on, the program starts to execute
+  delay(10);  // to plug in serial monitor
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
