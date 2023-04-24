@@ -22,7 +22,7 @@ https://github.com/hpssjellis/mcu-stable-edu-launch,XIAO ESP32s3 Versions -->,V2
 20,TFT touch screen,, 
 21,SD Card,,Worked with attached Camera example
 22,Camera to PNG to SD card,, Works with attached camera example
-23,Camera to PNG to WebServer,,Not yet working
+23,Camera to PNG to WebServer,,Works needs: #define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
 24,Ethernet (If on Board),n/a, 
 25,Multiplexers,, 
 26,LoRa (if on board),n/a, 
