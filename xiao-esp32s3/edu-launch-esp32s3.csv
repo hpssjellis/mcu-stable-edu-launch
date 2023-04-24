@@ -4,7 +4,7 @@ https://github.com/hpssjellis/mcu-stable-edu-launch,XIAO ESP32s3 Versions -->,V2
 3,input variable resistor,,
 4,DAC to ADC,,
 5,VIDEO-FLAC (Programming),,
-6a,WiFi Server,,Not yet working
+6a,WiFi Server,,yes
 6b,BLE Show ID,Works,"Probably, needs useful examples"
 7,Servo,, 
 8,Transistor Example,, 
