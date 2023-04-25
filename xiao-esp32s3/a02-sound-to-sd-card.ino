@@ -22,9 +22,9 @@ char myWavFileName[30];
 char myFolderName[10] = "/Cool";
 
 void setup() {
+  randomSeed(analogRead(0));  // Seed the random number generator
   myCount = random(100000);
   Serial.begin(115200);
-  randomSeed(analogRead(0));  // Seed the random number generator
   pinMode(LED_BUILTIN, OUTPUT);
   //while (!Serial) ;
   delay(10000);  //just wait some seconds;
