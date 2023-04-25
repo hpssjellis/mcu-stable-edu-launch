@@ -31,7 +31,7 @@ Iages in JPG format working along with saving to the SD card and WiFi  and basic
 
 ## XIAO Esp32s3 (sense) 
 
-Notice my 3D printed clip to help depress the boot button when you plug the usb cable in
+Notice my 3D printed clip to help depress the boot button when you plug the usb cable in. STL file here [XIAO-esp32s3-pin-hold01-v04.stl](XIAO-esp32s3-pin-hold01-v04.stl)
 
 Impressive camera, WiFi/BLE SD card, mic all for around $15 USD
 
