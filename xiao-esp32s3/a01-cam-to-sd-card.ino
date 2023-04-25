@@ -3,10 +3,35 @@
 #include "SD.h"
 #include "SPI.h"
 
-#define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
+//#define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
 
-#include "camera_pins.h"
 
+//#if defined(CAMERA_MODEL_XIAO_ESP32S3)
+#define PWDN_GPIO_NUM     -1
+#define RESET_GPIO_NUM    -1
+#define XCLK_GPIO_NUM     10
+#define SIOD_GPIO_NUM     40
+#define SIOC_GPIO_NUM     39
+
+#define Y9_GPIO_NUM       48
+#define Y8_GPIO_NUM       11
+#define Y7_GPIO_NUM       12
+#define Y6_GPIO_NUM       14
+#define Y5_GPIO_NUM       16
+#define Y4_GPIO_NUM       18
+#define Y3_GPIO_NUM       17
+#define Y2_GPIO_NUM       15
+#define VSYNC_GPIO_NUM    38
+#define HREF_GPIO_NUM     47
+#define PCLK_GPIO_NUM     13
+
+//#else
+//#error "Camera model not selected"
+//#endif
+
+//#include "camera_pins.h"
+
+int myNextImage = 5000;   //seconds between images
 unsigned long lastCaptureTime = 0; // Last shooting time
 int imageCount = 1;                // File Counter
 bool camera_sign = false;          // Check camera status
@@ -48,8 +73,10 @@ void writeFile(fs::FS &fs, const char * path, uint8_t * data, size_t len){
 
 void setup() {
   Serial.begin(115200);
+  randomSeed(analogRead(0));  // Seed the random number generator
+  imageCount = random(100000);
   // while(!Serial); // When the serial monitor is turned on, the program starts to execute
-  delay(10);  // to plug in serial monitor
+  delay(10000);  // to plug in serial monitor
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
@@ -132,7 +159,8 @@ void setup() {
 
   sd_sign = true; // sd initialization check passes
 
-  Serial.println("Photos will begin in one minute, please be ready.");
+  Serial.println("Next Photo: "+String(myNextImage)+ " ms");
+
 }
 
 void loop() {
@@ -142,12 +170,12 @@ void loop() {
     unsigned long now = millis();
   
     //If it has been more than 1 minute since the last shot, take a picture and save it to the SD card
-    if ((now - lastCaptureTime) >= 60000) {
+    if ((now - lastCaptureTime) >= myNextImage) {
       char filename[32];
       sprintf(filename, "/image%d.jpg", imageCount);
       photo_save(filename);
       Serial.printf("Saved picture：%s\n", filename);
-      Serial.println("Photos will begin in one minute, please be ready.");
+      Serial.println("Next Photo: "+String(myNextImage)+ " ms");
       imageCount++;
       lastCaptureTime = now;
     }
