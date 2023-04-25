@@ -28,7 +28,22 @@ This line is needed for camera stuff
 Iages in JPG format working along with saving to the SD card and WiFi  and basic BLE.
 
 
+<img width=400 src="https://user-images.githubusercontent.com/5605614/234101828-6c487024-0c76-4797-b660-688db3c12ff3.jpg" /><br>
+<img width=400 src="https://user-images.githubusercontent.com/5605614/234101845-e76cf515-bbe5-4c54-a381-1945e697e21f.jpg" /><br>
+<img width=400 src="https://user-images.githubusercontent.com/5605614/234172678-32683f4b-19de-4127-9cec-fc7d6ef5cb85.png" /><br>
+<img width=400 src="https://user-images.githubusercontent.com/5605614/234172684-73cca7de-0868-4178-ba56-516ea1afe3f3.jpg" /><br>
+
+.
+
+
+.
+
+
+
+
 ![image10](https://user-images.githubusercontent.com/5605614/234101828-6c487024-0c76-4797-b660-688db3c12ff3.jpg)
 ![image6](https://user-images.githubusercontent.com/5605614/234101845-e76cf515-bbe5-4c54-a381-1945e697e21f.jpg)
 
+![web-cam](https://user-images.githubusercontent.com/5605614/234172678-32683f4b-19de-4127-9cec-fc7d6ef5cb85.png)
+![xiao-sense](https://user-images.githubusercontent.com/5605614/234172684-73cca7de-0868-4178-ba56-516ea1afe3f3.jpg)
 
