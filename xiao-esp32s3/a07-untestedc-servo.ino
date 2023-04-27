@@ -43,30 +43,35 @@ Servo myServo_D2;
 void setup() {
   
   pinMode(LED_BUILTIN, OUTPUT);
-  myServo_D2.attach(D2);   // D2 should do PWM on Portenta
+  Serial.begin(115200);
+  myServo_D2.attach(D2);   
 
 }
 
 void loop() {
- 
-  digitalWrite(LED_BUILTIN, LOW); // Portenta onboard LED on    
-    
+  digitalWrite(LED_BUILTIN, LOW); // XIAO onboard LED on    
+  Serial.println("Testing Servo");  
   myServo_D2.write(20);           // servo at 20 degrees try 0
   delay(2000);
-    
+
+  
+
   myServo_D2.write(160);         // servo at 160 degrees try 180
   delay(2000);
+
 
   myServo_D2.write(90);          // servo at 90 degrees
   delay(2000);   
     
-    
+ 
+   
   for (int myLoop = 20; myLoop <= 160; myLoop++){
     myServo_D2.write(myLoop);
     delay(25);  // short delay 25 ms
   }
 
-  digitalWrite(LED_BUILTIN, HIGH);     // Portenta onboard LED off
-  delay(5000);            // 5 second delay
-
+  digitalWrite(LED_BUILTIN, HIGH);     // XIAO onboard LED off
+  myServo_D2.detach();                 // detach to reduce servo jitter during delay
+  delay(5000);                         // 5 second delay
+  myServo_D2.attach(D2);               // re-attach after delay
 }
