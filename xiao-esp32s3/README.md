@@ -20,7 +20,7 @@ Then after the program is uploaded unplug and plug in the USB cable again but wi
 
 This line is needed for camera stuff
 ```
-#define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
+#define CAMERA_MODEL_XIAO_ESP32S3  Has PSRAM    // Note Has PSRAM is important
 ```
 
 and perhaps this
