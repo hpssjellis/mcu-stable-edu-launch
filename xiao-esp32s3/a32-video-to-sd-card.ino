@@ -25,9 +25,9 @@
 #define PCLK_GPIO_NUM     13
 
 
-int myDurationMs = 5000;
-int myPauseMs = 5000;
-
+unsigned long myDurationMs = 5000;
+unsigned long myPauseMs = 5000;
+//unsigned long captureDuration = myDurationMs; // 10 seconds
 
 
 //#include "camera_pins.h"
@@ -40,7 +40,7 @@ File videoFile;
 bool camera_sign = false;
 bool sd_sign = false;
 unsigned long lastCaptureTime = 0;
-unsigned long captureDuration = myDurationMs; // 10 seconds
+
 int imageCount = 0;
 
 void setup() {
@@ -111,7 +111,7 @@ void setup() {
   
   sd_sign = true;
 
-  Serial.println("Video of "+String(myDurationMs) +" will begin in "+String(myPauseMs)+", please be ready.");
+  Serial.println("Video of "+String(myDurationMs) +" ms, will begin in "+String(myPauseMs)+" ms, please be ready.");
 }
 
 void loop() {
@@ -133,7 +133,7 @@ void loop() {
       lastCaptureTime = now;
       
       // Start capturing video frames
-      while ((millis() - lastCaptureTime) < captureDuration) {
+      while ((millis() - lastCaptureTime) < myDurationMs) {
         camera_fb_t *fb = esp_camera_fb_get();
         if (!fb) {
           Serial.println("Error getting framebuffer!");
