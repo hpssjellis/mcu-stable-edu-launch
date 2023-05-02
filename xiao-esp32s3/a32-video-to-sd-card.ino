@@ -26,7 +26,7 @@
 
 
 int myDurationMs = 5000;
-int myPauseMs = 10000;
+int myPauseMs = 5000;
 
 
 
@@ -148,10 +148,12 @@ void loop() {
       Serial.printf("Video saved: %s\n", filename);
       imageCount++;
 
-      Serial.println("Video of "+String(myDurationMs) +" will begin in "+String(myPauseMs)+", please be ready.");
+      Serial.println("Video of "+String(myDurationMs) +" ms, will begin in "+String(myPauseMs)+" ms, please be ready.");
 
       // Wait for the remaining time of the minute
-      delay(myPauseMs - (millis() - lastCaptureTime));
+    //delay(myPauseMs - (millis() - lastCaptureTime));
+    delay(myPauseMs);
     }
   }
+
 }
