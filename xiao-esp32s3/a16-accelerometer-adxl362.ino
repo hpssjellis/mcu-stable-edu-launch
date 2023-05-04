@@ -42,8 +42,7 @@ void loop(){
     
   // read all three axis in burst to ensure all measurements correspond to same sample time
   xl.readXYZTData(XValue, YValue, ZValue, Temperature);  
-  Serial.println("m/s^2 --> x: " + String(XValue/98.1, 3) + "\t, y: "  + String(YValue/98.1, 3) + "\t, z: " + String(ZValue/98.1, 3) );
+  Serial.println("m/s^2 --> x: " + String(XValue * 0.0098, 3) + "\t, y: "  + String(YValue * 0.0098, 3) + "\t, z: " + String(ZValue * 0.0098, 3) );
   
   delay(500);                // Arbitrary delay to make serial monitor easier to observe
 }
-
