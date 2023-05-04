@@ -1,17 +1,13 @@
+
 // Connect the ADXL362 breakout: 
 
 // For the XIAO ESP32S3 Sense 
 
 // VIN: 3V3 
-
 // GND: GND 
-
 // SCL: D8 (SCK) 
-
 // SDA: D10 (MOSI) 
-
 // SDO: D9 (MISO) 
-
 // CS: D7 (SS) 
 
 
@@ -46,7 +42,7 @@ void loop(){
     
   // read all three axis in burst to ensure all measurements correspond to same sample time
   xl.readXYZTData(XValue, YValue, ZValue, Temperature);  
-  Serial.println("m/s^2 --> x: " + String(XValue/100.0, 3) + "\t, y: "  + String(YValue/100) + "\t, z: " + String(ZValue/100) );
+  Serial.println("m/s^2 --> x: " + String(XValue/98.1, 3) + "\t, y: "  + String(YValue/98.1, 3) + "\t, z: " + String(ZValue/98.1, 3) );
   
   delay(500);                // Arbitrary delay to make serial monitor easier to observe
 }
