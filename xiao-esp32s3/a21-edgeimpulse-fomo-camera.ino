@@ -19,11 +19,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  
+ 
+ ************ IMPORTANT FOR THE XIAO ESP32S3 SENSE *********************************
 
  1.  To fix your builds now I recommend switching off ESP NN acceleration
-to do that locate ei_classifier_config.h in exported Arduino library folder and add
+to do that locate ei_classifier_config.h in exported Arduino library folder  "\src\edge-impulse-sdk\classifier\" and change
+from:
+#define EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN 1
+
+to:
 #define EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN 0
-on line 25.
+about line 76
+
+should look like this
+
+#ifndef EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN
+    #if defined(ESP32)
+        #define EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN      0
+    #endif // ESP32 check
+#endif
+
+
+
+
 2. replace the starting lines with this
 #define CAMERA_MODEL_XIAO_ESP32S3 // Has PSRAM
 #if defined(CAMERA_MODEL_XIAO_ESP32S3)
@@ -55,10 +73,16 @@ Predictions (DSP: 4 ms., Classification: 1331 ms., Anomaly: 0 ms.):
 
 
 
-/* Includes ---------------------------------------------------------------- */
+*/
+
+
+
+/* important Includes ---------------------------------------------------------------- */
 
 // use your edgeimpulse deployed zip installed code here
-#include <ei-v26-esp-fomo-eyes-shades-96-96_inferencing.h>
+//#include <ei-v26-esp-fomo-eyes-shades-96-96_inferencing.h>
+#include <ei-v27-esp-fomo-eyes-shades-96-96_inferencing.h>
+
 
 #include "edge-impulse-sdk/dsp/image/image.hpp"
 
