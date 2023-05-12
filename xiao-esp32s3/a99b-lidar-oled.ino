@@ -55,11 +55,16 @@ Adafruit_SSD1327 display(128, 128, &SPI, OLED_DC, OLED_RESET, OLED_CS);
 
 
 
+unsigned long myDelay = 5000;   // non-block delay in milliseconds
+unsigned long myStart;
 
 
+// Zoom can be about 10 m = 10000 mm. Device should do about 8 m = 8000 mm
+#define MY_ZOOM_NEG_X  -8000
+#define MY_ZOOM_POS_X  8000
 
-
-
+#define MY_ZOOM_NEG_Y  -8000
+#define MY_ZOOM_POS_Y  8000
 
 
 
@@ -105,6 +110,7 @@ void setup() {
  // M5.begin(true, false, true);
   delay(10);
   Serial.begin(115200);
+  myStart = millis();   // set delay
   ld06.Init(19);  // pin not used 
 
 
@@ -125,15 +131,12 @@ void setup() {
 
 void loop() {
   
-  
-  //  display.clearDisplay();                 // put this on a timer.
-
-  
-  
-  display.drawRect(0,0,128,128, SSD1327_WHITE ); // border around the screen
-  display.setCursor(3,3);
-  display.println("Rocksetta");
-
+    if ( (millis() - myStart ) >= myDelay) {       
+      myStart = millis();      //  reset the delay time
+      display.clearDisplay();
+      display.setCursor(0, 0);
+      display.println("Rocksetta D100 Lidar");
+    }
 
 
 
@@ -146,37 +149,18 @@ void loop() {
  // Serial.printf("start_bytet:%d, data_length:%d, Speed:%f, FSA:%f, LSA:%f, time_stamp:%d, CS:%d",  ld06.start_byte, ld06.data_length, ld06.Speed, ld06.FSA, ld06.LSA, ld06.time_stamp, ld06.CS);
    
   Serial.print(ld06.data_length,HEX);
-  Serial.print(", [0]:");
-
+  Serial.print(", ");
+/*
 
   Serial.print( ld06.distances.size() );
   Serial.print(", ");
   Serial.print( ld06.angles.size() );
   Serial.print(", ");
 
- // int myDist =  round(ld06.distances[0]);
-
- // Serial.print( myDist );
-
-  //Serial.print( String(ld06.distances[0],0) );
-  //Serial.print(  (int)ld06.distances[0] );
-  /*
-  Serial.print(", ");
-  Serial.print(ld06.angles[0]);
-  Serial.print("; [1]");
-  Serial.print(ld06.distances[1]);
-  Serial.print(", ");
-  Serial.print(ld06.angles[1]);
-  Serial.print("; [2] ");
-  Serial.print(ld06.distances[2]);
-  Serial.print(", ");
-  Serial.print(ld06.angles[2]);
-  Serial.print(", ");
-
-  */
+// Serial printing the vector array seems to not work well.
 
   Serial.println();
-
+*/
 
   for (int i = 0; i < ld06.data_length; i++) {
 /*
@@ -196,12 +180,12 @@ void loop() {
       int myY = round(ld06.distances[i] * cos(ld06.angles[i] * M_PI / 180.0));
 
 
-      int   myX1Map = map((int)myX, -800, 800, 0, 127);  // not sure what to map from possibly 8000 mm = 8 m
+      int   myX1Map = map((int)myX, MY_ZOOM_NEG_X, MY_ZOOM_POS_X, 0, 127);  // not sure what to map from possibly 8000 mm = 8 m
     // if (myX1Map < -64){myX1Map = -64;}
       if (myX1Map < 0){myX1Map = 0;}
       if (myX1Map > 127){myX1Map = 127;}
 
-      int   myY1Map = map((int)myY, -800, 800, 0, 127);
+      int   myY1Map = map((int)myY, MY_ZOOM_NEG_Y, MY_ZOOM_POS_Y, 0, 127);
       //if (myY1Map < -64){myY1Map = 0;}
       if (myY1Map < 0){myY1Map = 0;}
       if (myY1Map > 127){myY1Map = 127;}
@@ -271,7 +255,7 @@ void LD06forArduino::calc_lidar_data(std::vector<char> &values) {
     angle_step = (LSA + (360 - FSA)) / (data_length - 1);
   }
 
-  // note: 刻み幅の異常を検知
+
   if (angle_step > 20) {
     return;
   }
