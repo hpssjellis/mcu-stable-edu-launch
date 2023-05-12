@@ -87,7 +87,7 @@ Web Server showing images streamed and able to save<br>
 
 
 .
-XIAO esp32s3 using GRAYSCALE and 96x96 resolution with waveshare 128x128 fast OLED. This is in prep to get an edgeimpulse machine learning model working quickly 
+XIAO esp32s3 using GRAYSCALE and 96x96 resolution with waveshare 128x128 fast OLED. This is in prep to get an edgeimpulse machine learning model working quickly <br>
 <img width=400 src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/7fbf78b3-e1a6-49cd-97a5-e8e43c0ace53" /><br>
 
 
