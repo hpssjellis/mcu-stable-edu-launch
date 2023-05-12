@@ -20,6 +20,9 @@
  * SOFTWARE.
  
  
+ Presently getting FOMO (faster objects more objects) classification in about 1150 ms
+ I am trying to improve that in the next sketches
+ 
  ************ IMPORTANT FOR THE XIAO ESP32S3 SENSE *********************************
 
  1.  To fix your builds now I recommend switching off ESP NN acceleration
