@@ -55,11 +55,11 @@ Adafruit_SSD1327 display(128, 128, &SPI, OLED_DC, OLED_RESET, OLED_CS);
 
 
 
-unsigned long myDelay = 5000;   // non-block delay in milliseconds
+unsigned long myDelay = 8000;   // non-block delay in milliseconds
 unsigned long myStart;
 
 
-// Zoom can be about 10 m = 10000 mm. Device should do about 8 m = 8000 mm
+// Zoom can be about 10 m = 10000 mm. Device should do about 8 m = 8000 mm. I like to zoom in to 500
 #define MY_ZOOM_NEG_X  -8000
 #define MY_ZOOM_POS_X  8000
 
@@ -125,7 +125,16 @@ void setup() {
   display.setRotation(0);
   display.setCursor(0,0);
 
+  display.setCursor(0, 0);
+  display.println("Rocksetta D100 Lidar");
+  // Draw a triangle to show the Lidar device
+  display.drawTriangle(64,62,60,66,68,66,  255);
 
+  float myScreenWidthMeters = (MY_ZOOM_POS_X - MY_ZOOM_NEG_X) / 1000.0;
+  display.setCursor(3, 120);  // near bottom
+  display.print("Sceen Width: ");
+  display.print(String(myScreenWidthMeters,1));
+  display.println(" m");
 
 }
 
@@ -136,6 +145,16 @@ void loop() {
       display.clearDisplay();
       display.setCursor(0, 0);
       display.println("Rocksetta D100 Lidar");
+      // Draw a triangle to show the Lidar device
+      display.drawTriangle(64,62,60,66,68,66,  255);
+
+      // Measurements
+     
+      float myScreenWidthMeters = (MY_ZOOM_POS_X - MY_ZOOM_NEG_X) / 1000.0;
+      display.setCursor(3, 120);  // near bottom
+      display.print("Sceen Width: ");
+      display.print(String(myScreenWidthMeters,1));
+      display.println(" m");
     }
 
 
@@ -176,7 +195,7 @@ void loop() {
 
 
       // lidar going counterclockwise so flip sin and cos
-      int myX = round(ld06.distances[i] * sin(ld06.angles[i] * M_PI / 180.0));
+      int myX = round(-1 * ld06.distances[i] * sin(ld06.angles[i] * M_PI / 180.0));  // -1 to flip left right
       int myY = round(ld06.distances[i] * cos(ld06.angles[i] * M_PI / 180.0));
 
 
