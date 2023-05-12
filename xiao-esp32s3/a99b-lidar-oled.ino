@@ -134,7 +134,7 @@ void loop() {
   display.setCursor(3,3);
   display.println("Rocksetta");
 
-  
+
 
 
   // put your main code here, to run repeatedly:
@@ -196,12 +196,12 @@ void loop() {
       int myY = round(ld06.distances[i] * cos(ld06.angles[i] * M_PI / 180.0));
 
 
-      int   myX1Map = map((int)myX, -5000, 5000, 0, 127);  // not sure what to map from possibly 8000 mm = 8 m
+      int   myX1Map = map((int)myX, -800, 800, 0, 127);  // not sure what to map from possibly 8000 mm = 8 m
     // if (myX1Map < -64){myX1Map = -64;}
       if (myX1Map < 0){myX1Map = 0;}
       if (myX1Map > 127){myX1Map = 127;}
 
-      int   myY1Map = map((int)myY, -5000, 5000, 0, 127);
+      int   myY1Map = map((int)myY, -800, 800, 0, 127);
       //if (myY1Map < -64){myY1Map = 0;}
       if (myY1Map < 0){myY1Map = 0;}
       if (myY1Map > 127){myY1Map = 127;}
