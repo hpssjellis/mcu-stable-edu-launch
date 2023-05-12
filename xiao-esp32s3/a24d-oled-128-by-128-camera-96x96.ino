@@ -11,9 +11,9 @@
 
  *  FOR the GRAYSCALE Waveshare OLED
  *   black GND 
- *   red 3v3     
- *   blue  DIN (mosi) D8  // D10 on XIAO
- *   yellow (sck) D9      // D8 on XIAO
+ *   red 3v3  on Portenta  must be 5V on XIAO esp32S3   
+ *   blue  DIN (mosi) D8 on Portenta  // D10 on XIAO esp32S3 
+ *   yellow (sck) D9 on Portenta     // D8 on XIAO esp32S3 
  *   orange (cs) D7
  *   green (dc)  D6
  *   white (reset) not needed but D14 if you did
@@ -24,6 +24,10 @@
  */
 
 /*
+
+NOTE: Must have compile setting 
+PSRAM: OPI PSRAM 
+
 typedef enum {
     FRAMESIZE_96X96,    // 96x96
     FRAMESIZE_QQVGA,    // 160x120
@@ -246,7 +250,10 @@ void loop() {
           int myGrayMap = map( myGRAY, 0, 255, 0, 15);  
           int xMap = map(x, 0, 96, 0, 127);
           int yMap = map(y, 0, 96, 0, 127);
-          display.drawPixel(xMap, yMap, myGrayMap );   //  XIAO GRAYSCALE 240x240   color,      grayscale 0-255, 128x128  //128 x 64
+          display.drawPixel(xMap, yMap, myGrayMap );        //  XIAO GRAYSCALE 96x96      grayscale 0-255, 128x128  //128 x 64
+          display.drawPixel(xMap+1, yMap, myGrayMap );      //  trick to fill in missing pixels
+          display.drawPixel(xMap, yMap+1, myGrayMap );      //  trick to fill in missing pixels
+          display.drawPixel(xMap+1, yMap+1, myGrayMap );    //  trick to fill in missing pixels
       } 
     }     
   //}
