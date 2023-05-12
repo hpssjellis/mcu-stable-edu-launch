@@ -11,9 +11,9 @@
 
  *  FOR the GRAYSCALE Waveshare OLED
  *   black GND 
- *   red 3v3     
- *   blue  DIN (mosi) D8  // D10 on XIAO
- *   yellow (sck) D9      // D8 on XIAO
+ *   red 3v3  on Portenta must be 5V pin on ESP32   
+ *   blue  DIN (mosi) D8 on Portenta  // D10 on XIAO
+ *   yellow (sck) D9  on Portenta     // D8 on XIAO
  *   orange (cs) D7
  *   green (dc)  D6
  *   white (reset) not needed but D14 if you did
@@ -21,9 +21,14 @@
  * another reference here 
  * https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives
  *
- */
 
-/*
+
+
+
+
+NOTE: Must have compile setting 
+PSRAM: OPI PSRAM  
+
 typedef enum {
     FRAMESIZE_96X96,    // 96x96
     FRAMESIZE_QQVGA,    // 160x120
@@ -176,27 +181,9 @@ Serial.begin(115200);
   config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
   config.fb_location = CAMERA_FB_IN_PSRAM;
   config.jpeg_quality = 12;
-  config.fb_count = 1;
+  config.fb_count = 2;   // special for this framesize
   
-  // if PSRAM IC present, init with UXGA resolution and higher JPEG quality
-  //                      for larger pre-allocated frame buffer.
-  if(config.pixel_format == PIXFORMAT_JPEG){
-    if(psramFound()){
-      config.jpeg_quality = 10;
-      config.fb_count = 2;
-      config.grab_mode = CAMERA_GRAB_LATEST;
-    } else {
-      // Limit the frame size when PSRAM is not available
-      config.frame_size = FRAMESIZE_SVGA;
-      config.fb_location = CAMERA_FB_IN_DRAM;
-    }
-  } else {
-    // Best option for face detection/recognition
-    config.frame_size = FRAMESIZE_240X240;
-#if CONFIG_IDF_TARGET_ESP32S3
-    config.fb_count = 2;
-#endif
-  }
+
 
   // camera init
   esp_err_t err = esp_camera_init(&config);
@@ -251,5 +238,4 @@ void loop() {
   //Serial.println("working");
   esp_camera_fb_return(fb);
 }
-
 
