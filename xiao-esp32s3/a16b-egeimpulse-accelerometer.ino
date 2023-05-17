@@ -12,8 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Modified from original Arduino Nano code by MJRovai @11Ma23
+
+ ************ IMPORTANT FOR THE XIAO ESP32S3 SENSE *********************************
+
+ 1.  To fix your builds now I recommend switching off ESP NN acceleration
+to do that locate ei_classifier_config.h in exported Arduino library folder  "\src\edge-impulse-sdk\classifier\" and change
+from:
+#define EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN 1
+
+to:
+#define EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN 0
+about line 76
+
+should look like this
+
+#ifndef EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN
+    #if defined(ESP32)
+        #define EI_CLASSIFIER_TFLITE_ENABLE_ESP_NN      0
+    #endif // ESP32 check
+#endif
+
+
+
  */
+
 
 
 
@@ -40,33 +62,29 @@
 // INT1: no connection 
 
  
-
 #include <ADXL362.h>
 
+ADXL362 imu;
 
-
-
-
-
+//int16_t temp;
+//int16_t XValue, YValue, ZValue, Temperature;
 
 
 
 /* Includes ---------------------------------------------------------------- */
-//#include <XIAO-ESP32S3-Motion-Classification_inferencing.h>
 #include <W7-8-esp32-accel-WORDS-both-better_inferencing.h>
+//#include <XIAO-ESP32S3-Motion-Classification_inferencing.h>
 //#include "I2Cdev.h"
 //#include "MPU6050.h"
 //#include "Wire.h"
 
 /* Constant defines -------------------------------------------------------- */
-
-
-ADXL362 imu;
 //MPU6050 imu;
-int16_t ax, ay, az, myTemperature;
+int16_t ax, ay, az, temperature;
 
 #define ACC_RANGE           1 // 0: -/+2G; 1: +/-4G
-#define CONVERT_G_TO_MS2    (9.81/(16384.0/(1.+ACC_RANGE))) 
+#define CONVERT_G_TO_MS2    (9.81/(16384/(1.+ACC_RANGE)))
+#define MAX_ACCEPTED_RANGE  (2*9.81)+(2*9.81)*ACC_RANGE  
 
 /*
  ** NOTE: If you run into TFLite arena allocation issue.
@@ -84,43 +102,38 @@ int16_t ax, ay, az, myTemperature;
  */
 
 /* Private variables ------------------------------------------------------- */
-static bool debug_nn = false; // Set this to true to see e.g. features generated from the raw signal
+static bool debug_nn = true; // Set this to true to see e.g. features generated from the raw signal
 
 /**
 * @brief      Arduino setup function
 */
 void setup()
 {
+    // put your setup code here, to run once:
     Serial.begin(115200);
-    while (!Serial);
-    Serial.println("Edge Impulse Inferencing - XIAO ESP32S3");
-    
+    // comment out the below line to cancel the wait for USB connection (needed for native USB)
+    //while (!Serial);
+    Serial.println("Edge Impulse Inferencing Demo");
+
     // initialize device
     Serial.println("Initializing I2C devices...");
     //Wire.begin();
     //imu.initialize();
-
     imu.begin(D7);                   // Setup SPI protocol, issue device soft reset
-    imu.beginMeasure();  
-
-
-
+    imu.beginMeasure();
     delay(10);
-    
+/*
+    //Set MCU 6050 OffSet Calibration
+    imu.setXAccelOffset(-4732);
+    imu.setYAccelOffset(4703);
+    imu.setZAccelOffset(8867);
+    imu.setXGyroOffset(61);
+    imu.setYGyroOffset(-73);
+    imu.setZGyroOffset(35);
 
-    /*
-    // verify connection
-    if (imu.testConnection()) {
-      Serial.println("IMU connected");
-    }
-    else {
-      Serial.println("IMU Error");
-    }
+    imu.setFullScaleAccelRange(ACC_RANGE);
 
-    */
-
-    //imu.setFullScaleAccelRange(ACC_RANGE);
-
+*/
     if (EI_CLASSIFIER_RAW_SAMPLES_PER_FRAME != 3) {
         ei_printf("ERR: EI_CLASSIFIER_RAW_SAMPLES_PER_FRAME should be equal to 3 (the 3 sensor axes)\n");
         return;
@@ -129,8 +142,8 @@ void setup()
 
 /**
  * @brief Return the sign of the number
- * 
- * @param number 
+ *
+ * @param number
  * @return int 1 if positive (or 0) -1 if negative
  */
 float ei_get_sign(float number) {
@@ -157,19 +170,23 @@ void loop()
         // Determine the next tick (and then sleep later)
         uint64_t next_tick = micros() + (EI_CLASSIFIER_INTERVAL_MS * 1000);
 
-
-        imu.readXYZTData(ax, ay, az, myTemperature);  
-
-
-
-        //imu.getAcceleration(&ax, &ay, &az);       
+       // imu.getAcceleration(&ax, &ay, &az);   
+        imu.readXYZTData(ax, ay, az, temperature);  
         buffer[ix + 0] = ax;
         buffer[ix + 1] = ay;
         buffer[ix + 2] = az;
-        
+       
+        //ei_printf("raw values:    %.2f, %.2f, %.2f\n", ax*CONVERT_G_TO_MS2, ay*CONVERT_G_TO_MS2, az*CONVERT_G_TO_MS2);
+       
         buffer[ix + 0] *= CONVERT_G_TO_MS2;
         buffer[ix + 1] *= CONVERT_G_TO_MS2;
         buffer[ix + 2] *= CONVERT_G_TO_MS2;
+
+        for (int i = 0; i < 3; i++) {
+            if (fabs(buffer[ix + i]) > MAX_ACCEPTED_RANGE) {
+                buffer[ix + i] = ei_get_sign(buffer[ix + i]) * MAX_ACCEPTED_RANGE;
+            }
+        }
 
         delayMicroseconds(next_tick - micros());
     }
@@ -207,3 +224,4 @@ void loop()
 #if !defined(EI_CLASSIFIER_SENSOR) || EI_CLASSIFIER_SENSOR != EI_CLASSIFIER_SENSOR_ACCELEROMETER
 #error "Invalid model for current sensor"
 #endif
+
