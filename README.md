@@ -2,6 +2,9 @@
 What examples should a new microcontroller board present when it is launched
 
 
+All edgeimpulse code is fast if you copy the  the [ESP-NN.zip](ESP-NN.zip) extracted folder into the edgeimpulse installed library into the correct location
+
+..src\edge-impulse-sdk\porting\espressif\ESP-NN
 
 
 
