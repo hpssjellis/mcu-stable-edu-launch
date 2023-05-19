@@ -2,10 +2,6 @@
 What examples should a new microcontroller board present when it is launched
 
 
-All edgeimpulse code is fast if you copy the  the [ESP-NN.zip](ESP-NN.zip) extracted folder into the edgeimpulse installed library into the correct location
-
-..src\edge-impulse-sdk\porting\espressif\ESP-NN
-
 
 
 For Makers, micrconcontrollers launch as soon as the board is ready so that Makers can start using it. This does not work for education that takes from 6 months to 2 years to design a course around the new board which after 2 years is replaced by a cheaper better board. Making a horrible situation for Machine Learning and Robotics Educators. Here is a list of expected examples for a new board to present for it's mcuStableEduLaunch.
