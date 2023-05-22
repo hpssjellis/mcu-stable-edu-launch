@@ -103,3 +103,8 @@ XIAO esp32s3 using GRAYSCALE and 96x96 resolution with waveshare 128x128 fast OL
 
 
 
+
+Datasheet   https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf
+
+Technical sheet  https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf
+
