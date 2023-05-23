@@ -1,0 +1,122 @@
+/*
+ * webSerial for testing javascript connection with an arduino
+ * 
+ * Latest work at   https://github.com/hpssjellis/webMLserial
+ * 
+ * Note: On the Arduino Serial monitor make sure no line-ending or if statements will not work
+ * 
+ * Android https://hpssjellis.github.io/web-serial-polyfill/index.html
+ * Laptops Desktops  https://hpssjellis.github.io/my-examples-of-arduino-webUSB-webSerial/public/index.html
+ * IOS     not really sure
+ * 
+ */
+
+// Connect the ADXL362 breakout: 
+
+// For the XIAO ESP32S3 Sense 
+
+// VIN: 3V3 
+// GND: GND 
+// SCL: D8 (SCK) 
+// SDA: D10 (MOSI) 
+// SDO: D9 (MISO) 
+// CS: D7 (SS) 
+
+
+// or
+// D10  MOSI
+// D9 MISO
+// D8 SCK
+// D7 SS
+
+// INT1: no connection 
+
+// INT1: no connection 
+
+ 
+#include <ADXL362.h>
+
+ADXL362 IMU;
+
+int16_t temp;
+int16_t XValue, YValue, ZValue, Temperature;
+
+#define CONVERT_G_TO_MS2    9.80665f
+#define FREQUENCY_HZ        50
+#define INTERVAL_MS         (1000 / (FREQUENCY_HZ + 1))
+#define COLLECTION_SECONDS  10
+
+
+
+int myMaxData = FREQUENCY_HZ * COLLECTION_SECONDS;
+int myCount = 0;
+int myDelay = INTERVAL_MS;   // non-block delay in milliseconds
+unsigned long myStart; 
+
+String readString;
+bool mySendData = true;
+
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);   // onboard LED, HIGH = off
+  while (!Serial) {}                // do nothing and wait
+  
+  myStart = millis();   // set delay
+  randomSeed(analogRead(A0));  // AO pin on XIAO does not have to be connected to anything
+  Serial.println("timestamp,accX,accY,accZ");  // CSV file heading titles
+
+  IMU.begin(D7);                   // Setup SPI protocol, issue device soft reset
+  IMU.beginMeasure();              // Switch ADXL362 to measure mode  
+
+}
+
+void loop() {
+  //float x, y, z;
+  if ( (millis() - myStart ) >= myDelay) {       
+     myStart = millis();      //  reset the delay time
+     myCount += 1;
+
+    //IMU.readXYZTData(x, y, z, Temperature);  
+    IMU.readXYZTData(XValue, YValue, ZValue, Temperature);  
+
+     //IMU.readAcceleration(x, y, z);
+     //Serial.println( String(myStart)+ "," + String(analogRead(A0)) + "," + String(analogRead(A1)) + "," +  String(analogRead(A2))  );
+     if (myCount >= myMaxData){
+        mySendData = false;   // stop sending data when amount reached
+     }
+     if (mySendData){
+        Serial.println( String(myStart)+ "," + String(XValue) + "," + String(YValue) + "," +  String(ZValue)  );
+     } 
+   }
+
+   while (Serial.available()) {
+    delay(3);  
+    char myChar = Serial.read();
+    readString += myChar; 
+  }
+
+  if (readString.length() > 0) {
+    if (readString == "a"){
+      digitalWrite(LED_BUILTIN, LOW); //onboard LED LOW = on
+    }
+    if (readString == "b"){
+      digitalWrite(LED_BUILTIN, HIGH);
+    }
+    if (readString == "start"){
+      mySendData = true;
+      myCount = 0;
+    }
+    if (readString == "stop"){
+      mySendData = false;
+    }
+    if (readString == "firstline"){
+      Serial.println("timestamp,accX,accY,accZ");  // CSV file heading titles
+    }
+    readString="";
+  } 
+  
+}
+
+  
