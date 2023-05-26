@@ -17,3 +17,10 @@ https://towardsdatascience.com/tensorflow-meet-the-esp32-3ac36d7f32c7
 
 with github here   https://github.com/wezleysherman/ESP32-TensorFlow-Lite-Sample
 
+
+this is very interesting about esp32 with tensorflow.js 
+
+https://www.survivingwithandroid.com/esp32-cam-tensorflow-js/
+
+
+
