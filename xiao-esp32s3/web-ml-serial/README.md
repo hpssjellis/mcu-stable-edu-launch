@@ -11,7 +11,9 @@ Github at   https://github.com/hpssjellis/webMLserial/tree/main
 
 
 
-A gppd read
+A gopd read
 
 https://towardsdatascience.com/tensorflow-meet-the-esp32-3ac36d7f32c7
+
+with github here   https://github.com/wezleysherman/ESP32-TensorFlow-Lite-Sample
 
