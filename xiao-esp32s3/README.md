@@ -20,6 +20,9 @@ https://wiki.seeedstudio.com/xiao_esp32s3_getting_started
 # Marcelo link (More XIAO Sense working  examples)  
 https://github.com/Mjrovai/XIAO-ESP32S3-Sense
 
+For ML sound try his file at   https://github.com/Mjrovai/XIAO-ESP32S3-Sense/blob/main/xiao_esp32s3_microphone/xiao_esp32s3_microphone.ino  it is for a downloaded edgeimpulse include file
+
+
 
 ## NOTE: For new programs hold boot button while plugging in the USB cable. I have a small 3D Printed clip to help hold the boot button
 
