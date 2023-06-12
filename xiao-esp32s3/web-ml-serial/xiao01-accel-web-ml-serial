@@ -44,7 +44,7 @@ int16_t XValue, YValue, ZValue, Temperature;
 #define CONVERT_G_TO_MS2    9.80665f
 #define FREQUENCY_HZ        50
 #define INTERVAL_MS         (1000 / (FREQUENCY_HZ + 1))
-#define COLLECTION_SECONDS  10
+#define COLLECTION_SECONDS  2
 
 
 
@@ -98,6 +98,7 @@ void loop() {
   }
 
   if (readString.length() > 0) {
+    readString.trim();  // get rid of last weird character
     if (readString == "a"){
       digitalWrite(LED_BUILTIN, LOW); //onboard LED LOW = on
     }
