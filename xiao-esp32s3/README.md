@@ -6,6 +6,10 @@ https://wiki.seeedstudio.com/tinyml_workshop_course/
 
 which uses   edge lab at  https://seeed-studio.github.io/edgelab-web-app/#/dashboard/workplace
 
+This esp flashing tool is also interesting
+
+https://espressif.github.io/esptool-js/
+
 
 
 
