@@ -13,3 +13,10 @@ https://coral.ai/docs/dev-board-micro/arduino/#1-gather-requirements
 
 Coral API for Arduino
 https://coral.ai/docs/reference/micro/arduino/
+
+
+
+Main CoralMicro github for Arduino
+
+https://github.com/google-coral/coralmicro
+
