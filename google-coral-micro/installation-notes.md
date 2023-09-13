@@ -32,7 +32,7 @@ sudo udevadm trigger
 ```
 
 
-Video about installation here
+Video about python installation installation here (not terrible useful, but intereting to see.
 
 https://www.youtube.com/watch?v=yatapqfbIhA
 
