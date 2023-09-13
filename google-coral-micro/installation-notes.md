@@ -57,6 +57,18 @@ So Tried facesDetect. Compiled really fast. plugged in the coral-micro. ran ```l
 
 Trying my Windows machine.
 
+1. Windows Arduino IDE V1.8.19 loads board, compiles, does not show examples or upload errors on "paragraph"
+2. Windows Arduino IDE 2.2.1 at school loads board and short version of examples. compiles and loads blink program
+3. Windows Arduino IDE 2.2.1 on new home computer loads board and long version of examples. compiles and loads blink program 
+3. Ubuntu Linux Arduino IDE 2.2.1 on old laptop running version 20.x LTS loads board and long short of examples. Compiles and loads blink program 
+
+A. Generally ML code not working never seen the white LED for the TPU
+B. POE did not work at home to power the board
+C. POE worked at school to power board. The example I ran was kind of useless as it did not use a normal port and I could not viewe it on my local network. This is still kind of positive.
+D. Face Detect compiled and uploaded but did not seem to run
+E. TFLMHelloWorld worked but the output is not ready to show on the plotter. I did get results
+F. No idea how to code the inner M4 core?
+
 
 
 # Using Python
