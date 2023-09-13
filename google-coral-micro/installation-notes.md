@@ -153,7 +153,17 @@ python3 coralmicro/scripts/flashtool.py --build_dir out --elf_path out/coralmicr
 ```
 
 
+# General
 
+resync with the coral-micro site
+
+```
+git fetch origin
+
+git rebase origin/main
+
+git submodule update --init --recursive
+```
 
 
 
