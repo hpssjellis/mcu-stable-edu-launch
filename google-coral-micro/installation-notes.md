@@ -73,5 +73,91 @@ F. No idea how to code the inner M4 core?
 
 # Using Python
 
+I have Python3 version 3.8.10
+
+
+
+https://github.com/google-coral/coralmicro
+
+
+```
+Clone coralmicro and all submodules:
+
+git clone --recurse-submodules -j8 https://github.com/google-coral/coralmicro
+
+
+cd coralmicro && bash setup.sh
+
+
+bash build.sh
+
+python3 scripts/flashtool.py -e blink_led
+
+
+You can see the code at examples/blink_led/.
+
+Reset the board to Serial Downloader  (hold user button while pressing side button)
+
+
+
+```
+
+
+# RTOS
+The following did not work for me
+https://coral.ai/docs/dev-board-micro/freertos/#create-an-out-of-tree-project
+
+
+```
+git clone https://github.com/google-coral/coralmicro-out-of-tree-sample
+
+
+cd coralmicro-out-of-tree-sample
+
+git submodule add https://github.com/google-coral/coralmicro coralmicro
+
+git submodule update --init --recursive
+Install the required development tools (such as CMake) with this script:
+
+bash coralmicro/setup.sh
+That's it. You now have an out-of-tree project and you can start coding. Or continue to the next section and try flashing it to your board.
+
+Build and flash
+You can build and flash your out-of-tree project like this:
+
+Generate the project Makefile (run this from the out-of-tree-sample root):
+
+# -B specifies the path for your build output path and
+# -S specifies the path to the CMakeLists.txt file.
+cmake -B out -S .
+Build the app:
+
+make -C out -j4
+To maximize your CPU usage, replace -j4 with either -j$(nproc) on Linux or -j$(sysctl -n hw.ncpu) on Mac.
+
+Flash the app to your board:
+
+python3 coralmicro/scripts/flashtool.py --build_dir out --elf_path out/coralmicro-app
+coralmicro-app is the executable name that's specified in CMakeLists.txt, so that's the ELF file name you must specify with --elf_path.
+
+Note: In addition to specifying the path to your ELF file with --elf_path, you must specify the build output directory with --build_dir because flashtool needs to get the elf_loader (bootloader) program from there. Whereas, when flashing in-tree examples and apps, --build_dir can be ommitted because flashtool uses the default in-tree "build" directory. Similarly, in-tree examples/apps don't need to specify elf_path because those files reside in the same build directory, so you can instead specify just the project name with --example (or -e) and --app (or -a).
+When flashing is done, the board reboots and loads the app. You should see the green LED turn on. To see the "Hello World" message, connect to the serial console.
+
+When you modify the source code or CMake configuration, just rebuild and reflash the app:
+
+make -C out -j4
+
+python3 coralmicro/scripts/flashtool.py --build_dir out --elf_path out/coralmicro-app
+
+
+```
+
+
+
+
+
+
+
+
 
 
