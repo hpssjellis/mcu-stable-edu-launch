@@ -17,7 +17,20 @@ I tired on 2 of my school computers Arduino IDE version 2.2.x and it installed f
 I tired on my home Windows with Arduino Version 2.2.x and it installed fine with all examples
 
 
-I am trying on Linux with Arduino IDE version 2.2.x ...
+I am trying on Linux with Arduino IDE version 2.2.x
+
+I downloaded the zipped version and installed these devrules using a terminal
+
+```
+curl -OL https://dl.google.com/coral/micro/99-coral-micro.rules
+
+sudo cp 99-coral-micro.rules /etc/udev/rules.d
+
+sudo udevadm control --reload-rules
+
+sudo udevadm trigger
+```
+
 
 
 
