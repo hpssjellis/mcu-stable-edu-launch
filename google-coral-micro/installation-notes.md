@@ -36,5 +36,9 @@ Video about python installation installation here (not terrible useful, but inte
 
 https://www.youtube.com/watch?v=yatapqfbIhA
 
+Not many other videos
+
+So on Ubuntu 20 LTS I downloaded the Arduino IDE 2.2.1 and unzipped it, loaded the above dev-rules in the preferences entered the above .json file and then tried to find the coral board and it doesn't show up. What! 
+
 
 
