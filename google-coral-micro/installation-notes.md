@@ -86,10 +86,12 @@ wget https://github.com/Kitware/CMake/releases/download/v3.24.1/cmake-3.24.1-Lin
 && rm /tmp/cmake-install.sh \
 && sudo ln -s /opt/cmake-3.24.1/bin/* /usr/local/bin
 
-```
-Not updated cmake --version 
+Then restaert computer and run
 
-Dang
+cmake --version
+
+```
+
 
 
 https://github.com/google-coral/coralmicro
