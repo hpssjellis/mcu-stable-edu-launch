@@ -32,5 +32,9 @@ sudo udevadm trigger
 ```
 
 
+Video about installation here
+
+https://www.youtube.com/watch?v=yatapqfbIhA
+
 
 
