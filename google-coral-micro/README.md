@@ -1,6 +1,6 @@
 ## First look at the Google Coral Micro with WiFi and POE Power on Ethernet shields
 
-
+[installation-notes.md](installation-notes.md) Notes about how installation is going.
 
 Suggests linux or Mac, but does install on widows Arduino IDE 2 using this preference
 ```
