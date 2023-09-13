@@ -74,7 +74,22 @@ F. No idea how to code the inner M4 core?
 # Using Python
 
 I have Python3 version 3.8.10
+I have cmake version 3.16.3 but need version 3.18
 
+```
+
+wget https://github.com/Kitware/CMake/releases/download/v3.24.1/cmake-3.24.1-Linux-x86_64.sh \
+  -q -O /tmp/cmake-install.sh \
+&& chmod u+x /tmp/cmake-install.sh \
+&& sudo mkdir /opt/cmake-3.24.1 \
+&& sudo /tmp/cmake-install.sh --skip-license --prefix=/opt/cmake-3.24.1 \
+&& rm /tmp/cmake-install.sh \
+&& sudo ln -s /opt/cmake-3.24.1/bin/* /usr/local/bin
+
+```
+Not updated cmake --version 
+
+Dang
 
 
 https://github.com/google-coral/coralmicro
