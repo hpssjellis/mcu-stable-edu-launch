@@ -1,3 +1,5 @@
+## Using the Arduino IDE
+
 
 Coral-micro notes say install to Arduino IDE version 2.x on Linux or Mac
 
@@ -54,6 +56,10 @@ So Tried facesDetect. Compiled really fast. plugged in the coral-micro. ran ```l
 
 
 Trying my Windows machine.
+
+
+
+# Using Python
 
 
 
