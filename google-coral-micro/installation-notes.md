@@ -50,4 +50,10 @@ First weird thing. On my new windows machine all library examples were installed
 <img width="1000" alt="menu-coral-02-some" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/8ac8c9e9-b00e-478f-a644-2fdc7338f54a">
 
 
+So Tried facesDetect. Compiled really fast. plugged in the coral-micro. ran ```lsusb``` and it detected it. set the port in the arduino IDE and uploaded the code and it all worked. Then replugged in the micro and nothing. Orange LED that is is. No more port connection. DFU mode unresponsive. Uer button push while plugging in the USB.
+
+
+Trying my Windows machine.
+
+
 
