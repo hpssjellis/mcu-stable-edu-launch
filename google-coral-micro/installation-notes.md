@@ -42,7 +42,7 @@ So on Ubuntu 20 LTS I downloaded the Arduino IDE 2.2.1 and unzipped it, loaded t
 
 
 
-First weird thing. On my new windows machine all library examples were installed but on Linux and my Schools widows machines only the first group of examples are installed.
+First weird thing. On my new windows machine all library examples were installed but on Linux and my Schools windows machines only the first group of examples are installed.
 
 
 
