@@ -180,7 +180,7 @@ Note: In the scripts/requirements.txt file the
 hidapi==0.10.1   change to    hidapi==0.11.2
 ```
 
-
+## The following instructions did not work well for me
 These are the commands
 ```
 git clone https://github.com/google-coral/coralmicro-out-of-tree-sample
@@ -188,7 +188,11 @@ git clone https://github.com/google-coral/coralmicro-out-of-tree-sample
 
 cd coralmicro-out-of-tree-sample
 
-git submodule add https://github.com/google-coral/coralmicro coralmicro
+cd coralmicro
+
+git clone https://github.com/google-coral/coralmicro coralmicro
+
+cd ..
 
 git submodule update --init --recursive
 Install the required development tools (such as CMake) with this script:
