@@ -174,7 +174,14 @@ A couple of notes:
 The following did not work for me
 https://coral.ai/docs/dev-board-micro/freertos/#create-an-out-of-tree-project
 
+Note: In the scripts/requirements.txt file the 
 
+```
+hidapi==0.10.1   change to    hidapi==0.11.2
+```
+
+
+These are the commands
 ```
 git clone https://github.com/google-coral/coralmicro-out-of-tree-sample
 
