@@ -119,6 +119,45 @@ Reset the board to Serial Downloader  (hold user button while pressing side butt
 
 ```
 
+So all these examples are now pre-built and can be uploaded really fast by changing the flash command to any of these folder names
+
+https://github.com/google-coral/coralmicro/tree/main/examples
+
+```
+python3 scripts/flashtool.py -e detect_faces
+```
+
+Useful commands:
+
+Check the active COM port
+```
+ls /dev/ttyACM*
+```
+
+run screen to communicate with the COM port
+
+```
+screen /dev/ttyACM1 115200
+```
+
+
+.
+
+.
+
+.
+
+.
+.
+.
+.
+.
+
+.
+..
+.
+
+
 
 # RTOS
 The following did not work for me
