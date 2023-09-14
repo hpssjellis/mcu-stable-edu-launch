@@ -46,7 +46,7 @@ So on Ubuntu 20 LTS I downloaded the Arduino IDE 2.2.1 and unzipped it, loaded t
 
 First weird thing. On my new windows machine all library examples were installed but on Linux and my Schools windows machines only the first group of examples are installed.
 
-
+I am starting to understand the short list is for the linux micro-coral. the large list is for the Arduino. But some Arduino installations just get the small list.
 
 
 <img width="1000" alt="menu-coral-02-some" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/8ac8c9e9-b00e-478f-a644-2fdc7338f54a">
@@ -142,6 +142,11 @@ screen /dev/ttyACM1 115200
 screen /dev/ttyACM2 115200
 ```
 
+A couple of notes:
+
+1. Always first plugin the coral-micro pushing the middle button. load your code and then unplug-replug the coral-micro to run the code. Other methods seem flacky, this method always works.
+2.  
+.
 
 .
 
@@ -150,13 +155,17 @@ screen /dev/ttyACM2 115200
 .
 
 .
-.
-.
-.
+
 .
 
 .
+
+.
+
+.
+
 ..
+
 .
 
 
