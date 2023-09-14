@@ -134,10 +134,12 @@ Check the active COM port
 ls /dev/ttyACM*
 ```
 
-run screen to communicate with the COM port
+run screen to communicate with the COM port that has your coral-micro on
 
 ```
+screen /dev/ttyACM0 115200
 screen /dev/ttyACM1 115200
+screen /dev/ttyACM2 115200
 ```
 
 
