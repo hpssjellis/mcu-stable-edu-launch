@@ -4,7 +4,7 @@ Awesome tutorial here using edgeLab  ML with the XIAO-Sense
 
 https://wiki.seeedstudio.com/tinyml_workshop_course/
 
-which uses   edge lab at  https://seeed-studio.github.io/edgelab-web-app/#/dashboard/workplace
+which uses   senseCraft   https://seeed-studio.github.io/SenseCraft-Web-Toolkit/#/setup/process
 
 This esp flashing tool is also interesting
 
