@@ -12,6 +12,7 @@ https://espressif.github.io/esptool-js/
 
 
 
+![image](https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/44be02f9-3c90-476c-a86b-9c96c78dc9c9)
 
 
 April 2023
@@ -22,7 +23,6 @@ All edgeimpulse code is fast if you copy the  the [ESP-NN.zip](ESP-NN.zip) extra
 
 ```..src\edge-impulse-sdk\porting\espressif\ESP-NN```
 
-![image](https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/44be02f9-3c90-476c-a86b-9c96c78dc9c9)
 
 
 
