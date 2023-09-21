@@ -22,6 +22,9 @@ All edgeimpulse code is fast if you copy the  the [ESP-NN.zip](ESP-NN.zip) extra
 
 ```..src\edge-impulse-sdk\porting\espressif\ESP-NN```
 
+![image](https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/44be02f9-3c90-476c-a86b-9c96c78dc9c9)
+
+
 
 This XIAO Esp32s3 for $15 USD shows amazing potentail for Robotics and Machine Learning Education but presently the Education Launch is not yet read. See this CSV file of the process
 
