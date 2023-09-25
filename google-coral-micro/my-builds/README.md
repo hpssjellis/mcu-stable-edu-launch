@@ -1,0 +1,1 @@
+I have coralMicro installed on WSL at school, but uploading the builds works easiest from a linux computer so presently I am zipping the build folder and putting it here. It should be able to be installed once downloaded to my Linux machine.
