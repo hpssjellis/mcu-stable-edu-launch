@@ -11,4 +11,6 @@ my Steps:
 5. Find the ```User_Setup_Select.h``` file in the ```TFT-eSPI``` library folder and comment out the line that says ```#include <User_Setup.h>``` and add below it the line ```#define TOUCH_CS PIN_D2   ``` and uncomment the line ```#include <User_Setups/Setup66_Seeed_XIAO_RoundDisplay.h>```
 6. Download into the Arduino IDE the normal way the ```animationGif``` library by Laryy Bank
 7. Download into the Arduino IDE the normal way the ```SD``` library 
-8. Download into the Arduino IDE the normal way the ```I2C_BM8563``` library 
+8. Download into the Arduino IDE the normal way the ```I2C_BM8563``` library
+
+9. NOPE NOT WORKING
