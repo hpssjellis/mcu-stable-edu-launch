@@ -14,3 +14,5 @@ my Steps:
 8. Download into the Arduino IDE the normal way the ```I2C_BM8563``` library
 
 9. NOPE NOT WORKING
+
+but on my laptop these stepps installed fine for 2 out of 4 of the examples. I got the hardware test and the clock running. the gif and lvgl test did not work yet
