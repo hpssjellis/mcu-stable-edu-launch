@@ -14,9 +14,12 @@ https://github.com/RAKWireless/RAK2270-Sticker-Tracker
 
 
 
-Arduino IDE prefernces    ```
+Arduino IDE prefernces    
+```
 https://raw.githubusercontent.com/RAKWireless/RAKwireless-Arduino-BSP-Index/main/package_rakwireless.com_rui_index.json
 ```
+
+Load the RAK3172-SiP Board  (which is a bit confusing that it has a different name)
 
 Software
 The main chip used on the RAK2270 is the WisDuo Module RAK3172-SiP/RAK3172LP-SiP (pin-to-pin and software compatible). This chip has STM32WL SoC which is a combination of MCU and LoRa/SubGhz transceiver. 
