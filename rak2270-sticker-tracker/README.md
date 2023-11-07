@@ -26,4 +26,4 @@ The main chip used on the RAK2270 is the WisDuo Module RAK3172-SiP/RAK3172LP-SiP
 The firmware written on this is based on [RUI3](https://docs.rakwireless.com/RUI3/). You can start creating your own firmware using this [RAK3172-SiP guide](https://docs.rakwireless.com/Product-Categories/WisDuo/RAK3172-SiP/Quickstart/#rak3172-sip-as-a-stand-alone-device-using-rui3).
 
 
-<img width="202" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/20fdae1b-bc87-4d19-8777-8efe0ed5f843">
+<img width="800" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/20fdae1b-bc87-4d19-8777-8efe0ed5f843">
