@@ -43,4 +43,8 @@ Useful AT commands list
 https://docs.rakwireless.com/RUI3/Serial-Operating-Modes/AT-Command-Manual/#content
 
 
+Interesting link for RAK downloads
+
+https://downloads.rakwireless.com/LoRa/Tools/
+
 
