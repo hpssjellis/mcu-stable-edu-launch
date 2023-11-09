@@ -50,4 +50,6 @@ https://downloads.rakwireless.com/LoRa/Tools/
 https://downloads.rakwireless.com/LoRa/RAK2270/
 
 
+## accelerometer 
 
+It uses the LIS3DH  ?  I need more info!
