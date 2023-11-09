@@ -45,6 +45,9 @@ https://docs.rakwireless.com/RUI3/Serial-Operating-Modes/AT-Command-Manual/#cont
 
 Interesting link for RAK downloads
 
-https://downloads.rakwireless.com/LoRa/Tools/
+https://downloads.rakwireless.com/LoRa/Tools/   
+
+https://downloads.rakwireless.com/LoRa/RAK2270/
+
 
 
