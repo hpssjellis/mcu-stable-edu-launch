@@ -31,3 +31,16 @@ The firmware written on this is based on [RUI3](https://docs.rakwireless.com/RUI
 
 
 <img width="800" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/20fdae1b-bc87-4d19-8777-8efe0ed5f843">
+
+
+
+
+
+
+
+Useful AT commands list
+
+https://docs.rakwireless.com/RUI3/Serial-Operating-Modes/AT-Command-Manual/#content
+
+
+
