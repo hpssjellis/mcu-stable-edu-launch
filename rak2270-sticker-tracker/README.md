@@ -60,7 +60,7 @@ It uses the LIS3DH  ?  I need more info!
 
 https://store.rakwireless.com/products/daplink-tool?m=5&h=wisblock-accessory   RAKDAP1   $10 USD
 
-<img width="212" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/7592e52d-1c52-4929-9fd6-ab74dadba277">
+<img width="500" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/7592e52d-1c52-4929-9fd6-ab74dadba277">
 
 
 
