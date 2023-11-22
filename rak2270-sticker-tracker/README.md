@@ -45,9 +45,21 @@ https://docs.rakwireless.com/RUI3/Serial-Operating-Modes/AT-Command-Manual/#cont
 
 Interesting link for RAK downloads
 
-https://downloads.rakwireless.com/LoRa/Tools/   
+https://downloads.rakwireless.com/
 
-https://downloads.rakwireless.com/LoRa/RAK2270/
+
+
+
+RAK2270 Quickstart pdf   
+
+https://s3.eu-central-1.amazonaws.com/rakwireless-downloads-center-prod/LoRa/RAK2270/Quick%20Start%20Guide/RAK2270%20Quick%20Start%20Guide.pdf
+
+
+RAK270 Datasheet
+
+https://s3.eu-central-1.amazonaws.com/rakwireless-downloads-center-prod/LoRa/RAK2270/Datasheet/RAK2270%20Datasheet.pdf
+
+
 
 
 ## accelerometer 
