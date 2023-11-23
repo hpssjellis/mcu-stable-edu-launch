@@ -77,3 +77,8 @@ https://store.rakwireless.com/products/daplink-tool?m=5&h=wisblock-accessory   R
 
 
 
+Arm datasheet stm32wle5
+
+https://www.st.com/resource/en/datasheet/stm32wle5c8.pdf
+
+
