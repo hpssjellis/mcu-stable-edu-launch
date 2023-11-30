@@ -150,12 +150,27 @@ void loop() {
 uint8_t *byteData = reinterpret_cast<uint8_t *>(lpp.getBuffer());
 // Now you can use byteData as uint8_t *
 
- // if (api.lorawan.lpsend(2, 0, (uint8_t *) & collected_data, data_len)) 
 
- //AT+SEND=2:0467041A
- //AT+LPSEND=2:0467041A
-   
+   // This one might be the best and only one working
+ //if (api.lorawan.lpsend(4, 0, (uint8_t *) & collected_data, data_len)) 
+ 
+ //  if (api.lorawan.send(data_len, (uint8_t *) & collected_data, 4, api.lorawan.cfm.get(), 1)) 
+
+ //AT+SEND=4:0467041A
+ //AT+LPSEND=4:0:0467041A
+
+
+
+
+ 
+  // best does actually work. 
   if (api.lorawan.lpsend(2, 0, (uint8_t *) & byteData , lpp.getSize())) 
+
+  // i don't think this one works even with small 
+  // if (api.lorawan.send(lpp.getSize(), (uint8_t *) & byteData , 2, api.lorawan.cfm.get(), 1) )
+
+
+  
     
   //  if (api.lorawan.send(data_len, (uint8_t *) & collected_data, 2, api.lorawan.cfm.get(), 1)) 
    // if (api.lorawan.send(lpp.getSize(), (uint8_t *) & byteData , 2, api.lorawan.cfm.get(), 1)) 
@@ -222,7 +237,7 @@ void printVariables()
 
 
   */
-
+  Serial.println();
   Serial.println(F("----------------"));
 
   Serial.println(lpp.getSize());
