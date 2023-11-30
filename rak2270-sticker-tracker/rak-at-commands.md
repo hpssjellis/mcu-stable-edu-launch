@@ -39,6 +39,20 @@ AT+APPEUI=? Description: Application identifier
 
 AT+APPKEY=? Description: Application Key
 
+
+
+
+.
+
+
+
+
+.
+
+
+
+AT+DR=?   set the DATA rate for US915 can be from 0 to 14  default is 0
+
 AT+JOIN Description: Join LoRaWAN Network (wait a few seconds after the OK. )
 
 AT+NJM=? Description: Network Join Mode (0 = ABP, 1 = OTAA)|
