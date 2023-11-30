@@ -1,3 +1,12 @@
+Important API commands here
+
+https://staging.rui-api-docs.rakwireless.com/v3/LoRaWAN/#send
+
+
+
+
+
+
 
 based on my post here on the rak forum   
 
