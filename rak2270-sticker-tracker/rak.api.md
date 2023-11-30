@@ -1,5 +1,14 @@
 
+api link at 
 
+https://staging.rui-api-docs.rakwireless.com/v3/LoRaWAN/#joining-and-sending-data-on-lora%C2%AE-network
+
+
+
+
+
+
+Generic commands below
 
 api.lorawan.join(1,0,7,3)
 
