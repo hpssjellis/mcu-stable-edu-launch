@@ -36,9 +36,12 @@ AT+NJM=? Description: Network Join Mode (0 = ABP, 1 = OTAA)|
 
 AT+NJS=? Description: LoRa Network Join status(0 = not joined, 1 = joined)|
 
-AT+RECV=? Description: Last received data in hex mode (not working for me)
+AT+RECV=? Description: Last received data in hex mode (make sure no space at the end)
 
-AT+SEND=12:112233   Send data in port: hex format (not working for me)
+AT+SEND=12:112233   Send data in port: hex format (make sure no space at the end  11 byte limit)
+
+
+AT+LPSEND=2:0:03683C0467067C07730010080200C8    (This works)
 
 AT+CLASS=? Description: LoRa Class A B or C
 
