@@ -1,5 +1,6 @@
 void setup() {
-  Serial.begin(115200, RAK_CUSTOM_MODE);
+ // Serial.begin(115200, RAK_CUSTOM_MODE);
+  Serial.begin(115200, RAK_AT_MODE);
 }
 
 void loop() {
