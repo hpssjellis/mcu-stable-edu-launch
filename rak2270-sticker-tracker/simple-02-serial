@@ -1,0 +1,21 @@
+void setup() {
+  Serial.begin(115200, RAK_AT_MODE);
+}
+
+void loop() {
+  static String myString = ""; // String to store the accumulated characters
+
+  while (Serial.available() > 0) {
+    char myChar = Serial.read();
+    myString += myChar; // Append the character to the string
+    Serial.print(myChar);
+  }
+
+  // If you want to test the string after a certain condition, you can do so here.
+  // For example, you can check if the string ends with a newline character and then process it.
+  if (myString.endsWith("\n")) {
+    Serial.println("Complete String: " + myString);
+    // Process myString as needed
+    myString = ""; // Clear the string for the next message
+  }
+}
