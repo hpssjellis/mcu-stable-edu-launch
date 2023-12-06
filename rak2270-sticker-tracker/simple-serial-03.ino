@@ -1,7 +1,8 @@
 void setup() {
+  /void setup() {
   //Serial.begin(115200, RAK_CUSTOM_MODE);
   Serial.begin(115200, RAK_AT_MODE);
-  Serial.setTimeout(200);  // To enter AT command mode type "AT" the mode lasts 3 seconds
+  Serial.setTimeout(20);  // To enter AT command mode type "AT" the mode lasts 3 seconds
 }
 
 void loop() {
@@ -16,7 +17,7 @@ void loop() {
    myString.trim();  // get rid of last character
    if (myString == "Cool"){
       Serial.println("You entered :"+ myString);
-      Serial.println("Serial.getTimeout(): "+Serial.getTimeout());  
+      Serial.println("Serial.getTimeout(): "+String(Serial.getTimeout()) );  
     
    }
 
