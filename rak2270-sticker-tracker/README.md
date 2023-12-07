@@ -19,10 +19,25 @@ Arduino IDE prefernces
 https://raw.githubusercontent.com/RAKWireless/RAKwireless-Arduino-BSP-Index/main/package_rakwireless.com_rui_index.json
 ```
 
-Load the RAK3172-Evaluation Board  (which is a bit confusing that it has a different name)
+Load the RAK3272-SIP Board  (which is a bit confusing that it has a different name)
 
 
-Possibly does nto install on the new Arduino IDE
+Possibly does not install on the new windows Arduino IDE
+Fine on Linux. 
+
+
+# Best links:
+
+
+Rak Forum my chat  https://forum.rakwireless.com/t/rak2270-sticker-tracker-nov-2023-update/10800
+
+RUI3 API coding    https://docs.rakwireless.com/RUI3/Arduino-API/#read
+
+RUI3 "AT" LoRa P2P commands   https://docs.rakwireless.com/RUI3/Serial-Operating-Modes/AT-Command-Manual/#p2p-instructions
+
+RUI3 "AT" LoRaWan Commands   https://docs.rakwireless.com/RUI3/Serial-Operating-Modes/AT-Command-Manual/#content
+
+
 
 
 # Software
