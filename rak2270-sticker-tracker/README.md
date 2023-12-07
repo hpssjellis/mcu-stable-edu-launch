@@ -39,6 +39,23 @@ RUI3 "AT" LoRaWan Commands   https://docs.rakwireless.com/RUI3/Serial-Operating-
 
 
 
+Note: Kind of like ASCII but not really.
+
+```
+AT+PSEND=303132      sends 012
+AT+PSEND=616263      sends abc
+AT+PSEND=414243      sends ABC
+
+AT+PSEND=3a3b3c3d3e3f40     sends :;<=>?@
+
+AT+PSEND=5b5c5d5e5f60    sends  [\]^_`
+
+AT+PSEND=1f20212223242526272829202a2b2c2d2e2f3031      sends  !"#$%&'()*+,-./01        Note the space for AT+PSEND=20     
+
+
+```
+
+
 
 # Software
 The main chip used on the RAK2270 is the WisDuo Module RAK3172-SiP/RAK3172LP-SiP (pin-to-pin and software compatible). This chip has STM32WL SoC which is a combination of MCU and LoRa/SubGhz transceiver. 
