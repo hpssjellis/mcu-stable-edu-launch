@@ -13,6 +13,11 @@ Github at
 https://github.com/RAKWireless/RAK2270-Sticker-Tracker
 
 
+My 3D Print RIg for it is at 
+
+https://github.com/hpssjellis/my-3D-printing-stl/tree/master/RAK2270
+
+
 
 Arduino IDE prefernces    
 ```
