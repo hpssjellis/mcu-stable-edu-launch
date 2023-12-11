@@ -12,6 +12,11 @@ Github at
 
 https://github.com/RAKWireless/RAK2270-Sticker-Tracker
 
+but the firmware for the tracker is at github
+
+https://github.com/RAKWireless/RAK-STM32-RUI
+
+
 
 My 3D Print RIg for it is at 
 
