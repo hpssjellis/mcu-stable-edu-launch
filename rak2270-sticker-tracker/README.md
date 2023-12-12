@@ -16,9 +16,13 @@ but the firmware for the tracker is at github
 
 https://github.com/RAKWireless/RAK-STM32-RUI
 
+This website uses the sticker tracker to program some machine learning. (This is advanced)
+
+https://hpssjellis.github.io/tinyMLjs/public/acceleration/a00-best-acceleration-rak2270-sticker-tracker.html
 
 
-My 3D Print RIg for it is at 
+
+My 3D Print Rig for it is at 
 
 https://github.com/hpssjellis/my-3D-printing-stl/tree/master/RAK2270
 
