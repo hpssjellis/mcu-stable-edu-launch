@@ -8,6 +8,13 @@ https://store.rakwireless.com/products/rak2270-rak-sticker-tracker?variant=42714
 <img width="669" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/a63e5854-690c-4ad9-a133-5c6de194e9e3">
 
 
+
+
+# DEMO INDEX AT
+
+https://hpssjellis.github.io/mcu-stable-edu-launch/rak2270-sticker-tracker/html/index.html
+
+
 Github at
 
 https://github.com/RAKWireless/RAK2270-Sticker-Tracker
@@ -129,7 +136,7 @@ https://www.st.com/resource/en/datasheet/stm32wle5c8.pdf
 
 
 
-# DEMO AT
+# DEMO INDEX AT
 
-https://hpssjellis.github.io/mcu-stable-edu-launch/rak2270-sticker-tracker/html/lora-webpage03.html
+https://hpssjellis.github.io/mcu-stable-edu-launch/rak2270-sticker-tracker/html/index.html
 
