@@ -40,6 +40,7 @@
 
 // global variables	
         let myPort;
+        let myTimeoutId;
         const myArray = ['A.png', 'R.png', 'N.png', 'V.png', 'X.png'];   // all the images that are in this directory
 
         async function myConnect() {
@@ -59,14 +60,14 @@
                 const { value, done } = await myReader.read();
                 if (done) {
                     // Start a timeout when 'done' is true
-                    timeoutId = setTimeout(function () {
+                    myTimeoutId = setTimeout(function () {
                         console.log("No more data, closing stream.");
                         myReader.releaseLock();
                     }, 50); // wait a short time for more data to be sent     5000 ms = 5 seconds
                     break;
                 } else {
                     // If new data arrives, clear the previous timeout
-                    if (timeoutId) clearTimeout(timeoutId);
+                    if (myTimeoutId) {clearTimeout(myTimeoutId);}
                     if (value) {
                         myHandleData(new TextDecoder().decode(value));
                     }
