@@ -98,7 +98,7 @@
 -->
 
 <input id="myIncomingButton" type=button value="Check Incoming Data" onclick="{
-  let myInArray = document.getElementById('myArea01').value.split(/\r?\n|\r|\n|\0.*$/g)     ///\0.*$/g
+  let myInArray = document.getElementById('myArea01').value.split(/\r?\n|\r|\n|\0/g)     ///\0.*$/g
   console.log(myInArray)
 
   for (myLoop in myInArray) {
@@ -555,7 +555,7 @@ if (myCellPhoneOnce){
             table.style.width = "200px"
             let newRow = table.insertRow();
             let newCell = newRow.insertCell();
-            newCell.textContent = '<li>' + text;
+            newCell.textContent =  text;
         }
 
         function myHandleBadData(data) {
