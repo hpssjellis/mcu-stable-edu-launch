@@ -4,7 +4,7 @@
 <script>  
    // Global CVariables
    let exports = {};  // really important for WebSerial and Polyfill
-
+   let myCounter = 0;
    let myMultiCSV = true
 
    const myImageArray = ['A.png', 'R.png', 'N.png', 'V.png', 'X.png'];   // all the images that are in this directory
@@ -558,7 +558,19 @@ if (myCellPhoneOnce){
             table.style.width = "200px"
             let newRow = table.insertRow();
             let newCell = newRow.insertCell();
-            newCell.textContent =  text;
+          //  newCell.textContent =  text;
+
+             let now = new Date();
+             let dateString = now.toLocaleDateString();
+             let timeString = now.toLocaleTimeString();
+         
+             myCounter++;
+             newCell.textContent = `(#${myCounter}) ${text} - ${dateString} ${timeString} `;
+
+
+
+
+           
         }
 
         function myHandleBadData(data) {
