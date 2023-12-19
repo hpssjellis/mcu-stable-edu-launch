@@ -580,8 +580,10 @@ if (myCellPhoneOnce){
              newCellCount.textContent = `#${myCounter}`;
              let newCellData = newRow.insertCell();
              newCellData.textContent = `${text}`;
+             let newCellDate = newRow.insertCell();
+             newCellDate.textContent = `${dateString}`;
              let newCellTime = newRow.insertCell();
-             newCellTime.textContent = `${dateString} : ${timeString}`;
+             newCellTime.textContent = `${timeString}`;
 
 
            
