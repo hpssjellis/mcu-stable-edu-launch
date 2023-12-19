@@ -557,7 +557,9 @@ if (myCellPhoneOnce){
             table.style.border = "1px solid blue"            
             table.style.width = "600px"
             let newRow = table.insertRow();
-            let newCell = newRow.insertCell();
+
+
+           
           //  newCell.textContent =  text;
 
              let now = new Date();
@@ -565,9 +567,25 @@ if (myCellPhoneOnce){
              let timeString = now.toLocaleTimeString();
          
              myCounter++;
-             newCell.textContent = `(#${myCounter}) ${text} - ${dateString} ${timeString} `;
 
 
+
+
+           
+          //   let newCell = newRow.insertCell();
+          //   newCell.textContent = `#${myCounter}: ${text} - ${dateString} ${timeString} `;
+
+
+             let newCellCount = newRow.insertCell();
+             newCellCount.textContent = `#${myCounter}`;
+             let newCellData = newRow.insertCell();
+             newCellData.textContent = `${text}`;
+             let newCellTime = newRow.insertCell();
+             newCellTime.textContent = `${dateString} : ${timeString}`;
+
+
+           
+           
 
 
            
