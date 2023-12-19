@@ -97,7 +97,7 @@
 -->
 
 <input id="myIncomingButton" type=button value="Check Incoming Data" onclick="{
-  let myInArray = split(document.getElementById('myArea01').value)   
+  let myInArray = document.getElementById('myArea01').value.split(/\r?\n|\r|\n/g) 
   console.log(myInArray)
 }">
 
