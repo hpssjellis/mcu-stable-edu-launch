@@ -310,7 +310,7 @@ async function connectSerial() {
    //   if (value && !/^\s*$/g.test(value)) { // Check if value is not just whitespace or carriage return
                // Check if value is not just a line feed or carriage return
     //  if (!/^[\r\n]*$/g.test(value)) { 
-       console.log(value)
+    //   console.log(value)
       if (!/^[\r]*$/g.test(value)) { 
         if (myMultiCSV) {
             document.getElementById('myArea01').value += value;
@@ -555,7 +555,7 @@ if (myCellPhoneOnce){
             table.style.width = "200px"
             let newRow = table.insertRow();
             let newCell = newRow.insertCell();
-            newCell.textContent = text;
+            newCell.textContent = '<li>' + text;
         }
 
         function myHandleBadData(data) {
