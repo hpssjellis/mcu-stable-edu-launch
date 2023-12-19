@@ -54,18 +54,25 @@
             while (myPort.readable) {
                 const myReader = myPort.readable.getReader();
 
-                try {
-                    while (true) {
-                        const { value, done } = await myReader.read();
-                        if (done) {
-                            myReader.releaseLock();
-                            break;
-                        }
-                        if (value) {
-                            myHandleData(new TextDecoder().decode(value));
-                        }
+        try {
+            while (true) {
+                const { value, done } = await myReader.read();
+                if (done) {
+                    // Start a timeout when 'done' is true
+                    timeoutId = setTimeout(function () {
+                        console.log("No more data, closing stream.");
+                        myReader.releaseLock();
+                    }, 50); // wait a short time for more data to be sent     5000 ms = 5 seconds
+                    break;
+                } else {
+                    // If new data arrives, clear the previous timeout
+                    if (timeoutId) clearTimeout(timeoutId);
+                    if (value) {
+                        myHandleData(new TextDecoder().decode(value));
                     }
-                } catch (error) {
+                }
+            }
+        } catch (error) {
                     console.log('Read error: ' + error);
                 } finally {
                     myReader.releaseLock();
