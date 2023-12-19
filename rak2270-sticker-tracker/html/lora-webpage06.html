@@ -99,11 +99,11 @@
 -->
 
 <input id="myIncomingButton" type=button value="Check Incoming Data" onclick="{
-  let myInArray = document.getElementById('myArea01').value.split(/\r?\n|\r|\n/g) 
+  let myInArray = document.getElementById('myArea01').value.split(/\r?\n|\r|\n|\0.*$/g)     ///\0.*$/g
   console.log(myInArray)
 
   for (myLoop in myInArray) {
-       myHandleData(myInArray[myLoop].trim());     
+       myHandleData(myInArray[myLoop]);     
   }
    document.getElementById('myArea01').value = ''
    
