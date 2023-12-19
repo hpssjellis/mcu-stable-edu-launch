@@ -131,5 +131,5 @@ https://www.st.com/resource/en/datasheet/stm32wle5c8.pdf
 
 # DEMO AT
 
-https://hpssjellis.github.io/mcu-stable-edu-launch/rak2270-sticker-tracker/lora-webpage03.html
+https://hpssjellis.github.io/mcu-stable-edu-launch/rak2270-sticker-tracker/html/lora-webpage03.html
 
