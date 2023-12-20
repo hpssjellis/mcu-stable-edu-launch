@@ -7,9 +7,11 @@
    let myCounter = 0;
    let myMultiCSV = true
 
-   const myImageArray = ['A.png', 'R.png', 'N.png', 'V.png', 'X.png'];   // all the images that are in this directory
+   const myImageArray = ['A.png', 'B.png', 'F.png', 'R.png', 'N.png', 'V.png', 'X.png'];   // all the images that are in this directory
 
    let myInterval = setInterval(function () {document.getElementById('myIncomingButton').click()}, 2000);
+
+   document.getElementById('myImageList').value = 'cool'
 
 /*
   
@@ -85,10 +87,10 @@
 
 
 
-    <div id="content"></div>
+<div id="content"></div>
 
 
-   
+<input type=text id="myImageList" value="">  
    
 <button id="connectButton"  style="background-color:lime; width:200px; ">Connect via Serial Port</button><br>
 
@@ -116,45 +118,6 @@
 }">
 
 
-  <!--
-    
-<input type=button value="Cell Phone: Motion" title="Only Works with a cell phone" style=" height:50px; " onclick="{
-   myCellPhoneOnce = true  // so it will show the data
-   accelerometerData = [];
-   startTime = null;
-   document.getElementById('myArea01').value = '' 
-   if (mySendFirstLine) { document.getElementById('myArea01').value = 'accelX,accelY,accelZ\r\n';  }  // actually this is deleted, also done in the next function
-   setTimeout(function() {myCellPhoneMotion(); }, 300);  // short delay to send the first line before activating the sensor
-   setTimeout(function() { myShowGraph() }, 2500);      // give the data a few seconds to load before drawing chart        
-   
-}"> 
-
- <input type="button" value="Mouse Motion" onClick="{
- setTimeout(function() {
-       const myNumberOfSamples = parseInt(document.getElementById('myNumSamples').value);
-       let myMouseCount = 0;
-       let myMouseOutput = '';
-       document.getElementById('myArea01').value = 'Move the Mouse!';
-
-       const mousemoveListener = function (event) {
-           if (myMouseCount < myNumberOfSamples - 1) {
-               myMouseOutput += `${event.x},${event.y}\r\n`;
-               myMouseCount++;
-           } else {
-               document.removeEventListener('mousemove', mousemoveListener);
-               document.getElementById('myArea01').value = myMouseOutput;
-               myShowGraph();
-           }
-       };
-
-       document.addEventListener('mousemove', mousemoveListener);
-   }, 1000); // wait x ms to start mouse movement
-    }"><br> 
-
-
-   -->
-   
-<!--<input type="button" value="Stop Cell Data" style=" height:50px; " onclick="{ window.removeEventListener('devicemotion', handleMotionEvent); }">-->
 <br>    
 
 
@@ -195,20 +158,6 @@ Data to ignore:<BR>
 
 
 
-
-
-<!--
-<textarea id="myTextarea123"  wrap="off"  style= "font-size:15px; color:white; background-color:black; width:90%;"   rows=2 onclick="{
-  if (myOnce123){
-     myTextGrow('myTextarea123', 'myDiv123Code')
-     document.getElementById('myUpdate123').style.visibility = 'visible'
-     myOnce123 = false
-  }
-}">
-Click here to see the working HTML code.
-</textarea><br>
-
--->
 
    
  
