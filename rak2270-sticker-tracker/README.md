@@ -7,7 +7,7 @@ https://store.rakwireless.com/products/rak2270-rak-sticker-tracker?variant=42714
 
 <img width="669" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/a63e5854-690c-4ad9-a133-5c6de194e9e3">
 
-
+# Video Playlist plan   [video-playlist.md](video-playlist.md)
 
 
 # DEMO INDEX AT
