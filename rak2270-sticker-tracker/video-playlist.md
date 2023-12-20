@@ -24,10 +24,10 @@ Full coverage of the main sticker tracker. Every video
 1. push in pogoPins from the top using soldering gun to heat pins
 1. line up pins (this is difficult)
 1. Check if all pins can be squished, attach elestic bands to cause pressure.
-1. For USB TTL serial monitoring and programming over serial attach GND, RX, TX and 3.3V an Arduino can output 3.3V for you.
+1. For USB TTL serial monitoring and programming over serial attach GND, RX, TX and 3.3V an Arduino can output 3.3V for you. <hr>
 
  
-1.
+1. Connect the RAK2270StickerTracker with USB TTL monitor setup and working and check the Arduino Serial monitor output
 1.
 1.
 1.
