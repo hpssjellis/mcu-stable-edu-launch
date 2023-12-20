@@ -17,19 +17,16 @@ This playlist simply goes to the entry point for each of the other playlists tut
 Full coverage of the main sticker tracker. Every video
 
 
-1.
-1.
-1.
-1.
-1.
 1. removing label
 1. unsolder positive terminal of battery
 1. 3D Print latest rig
-1. hot glue holes of rig and scrape off extra (indent holes if you can)
+1. hot glue the pin holes on the rig and scrape off the extra (indent holes if you can). This is easier than re-melting the 3D print
 1. push in pogoPins from the top using soldering gun to heat pins
 1. line up pins (this is difficult)
-1. Check all pins can be squished
-1. For USB TTL serial monitoring and programming over serial attach GND, RX, TX and 3.3V  (important don't use 5V, the default program will send it to TrackPac.io)
+1. Check if all pins can be squished, attach elestic bands to cause pressure.
+1. For USB TTL serial monitoring and programming over serial attach GND, RX, TX and 3.3V an Arduino can output 3.3V for you.
+
+ 
 1.
 1.
 1.
