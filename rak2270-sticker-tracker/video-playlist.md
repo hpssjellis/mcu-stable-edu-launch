@@ -37,7 +37,7 @@ Full coverage of the main sticker tracker. Every video
 
 1. Now check at https://trackpac.io/ to see if the data is following to the website. (Instead of waiting an hour just recycle the power and it will send more data)
 1. Note: How inaccurate the location data is. It is just showing you where the HotSpot that is sensing your sticker is located. Hopefully by triangulation it can make better estimates but I doubt if they will be very good since LoRaWan signal strnegth does not represent distance as line of sight is always better signal strnegth than going through objects.
-1. Test if ```AT+BOOT``` and ```AT+RUN``` (Note small letters are fine) This will aslo reset the board and send new data to trackpac.io 
+1. Test if ```AT+BOOT``` and ```AT+RUN``` (Note small letters are fine) This will also reset the board and send new data to trackpac.io 
 1.
 1.
 1.
