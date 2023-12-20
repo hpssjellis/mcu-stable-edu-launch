@@ -28,6 +28,13 @@ Full coverage of the main sticker tracker. Every video
 
  
 1. Connect the RAK2270StickerTracker with USB TTL monitor setup and working and check the Arduino Serial monitor output
+
+![image](https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/99e4299e-27b2-4385-8317-00950a99aea8)
+
+
+
+
+
 1.
 1.
 1.
