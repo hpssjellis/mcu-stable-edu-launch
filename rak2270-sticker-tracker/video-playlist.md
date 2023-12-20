@@ -33,7 +33,7 @@ Full coverage of the main sticker tracker. Every video
 
 # RAK2270 LoRa P2P receive Novel WebSerial Static webpage monitor
 
-# RAK2270 LoRaWan Helium to Adafruit
+# RAK2270 LoRaWan Helium to Adafruit MQTT Cayenne LPP
 
 # RAK2270 Machine Learning Acceleration (x,y,z)
 
