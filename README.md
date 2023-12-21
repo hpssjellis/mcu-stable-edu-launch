@@ -9,8 +9,9 @@ What examples should a new microcontroller board present when it is launched
 
 3. I am presently tring the $14 USD (+$6 USD Cloud site) [RakWireless RAK2270 Sticker Tracker](https://store.rakwireless.com/products/rak2270-rak-sticker-tracker) and I think it has a spot in a Robotics-IOT Advanced class as an pad board with LoRa capability. Rakwireless is coming out with a development kit soon.
 
-4. Nano33BleSense Rev2 totally fine for the classroom
-5. Nicla Vision Probably the best board for beginner Machine Learning
+4. [$43.50 USD Nano33BleSense Rev2](https://store-usa.arduino.cc/products/nano-33-ble-sense-rev2-with-headers) totally fine for the classroom (No WiFi only BLE)
+5. [$115 USD Nicla Vision] Probably the best board for beginner Machine Learning
+6. [$114 PortentaH7](https://store-usa.arduino.cc/products/portenta-h7) with the [$69 USD LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) This is the board I really like but it is fairly expensive and not the best mcu for a classroom as it doesnot like having wires connected improperly
 
 -------
 
