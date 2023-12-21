@@ -12,37 +12,7 @@
    let myInterval = setInterval(function () {document.getElementById('myIncomingButton').click()}, 2000);
 
 
-/*
-  
-   let model
-   
-   let myDataFiles, myTensor; 
-   let myDataTotal = 0;
-   let myDataMcu = 0;
-   let myDataCSV = 0;
-   let mySendFirstLine = false
-   
-   let labelsArray;
-   let uniqueLabels, labelsTensor;
-   let myModelSamples, myModelSenses
-   let myMultiCSV = true
-   let myCellPhoneOnce = false
- //  let myCellPhoneEvent = true
-   
-   let accelerometerData = [];
-   let startTime = null;
-   let myModelWasUploaded = false
-   let myBaseCsvFileName = 'myCSV-'
-   
-    // let myRaw = false
-   //  let myRawInterval
 
-
-  */
-   
-
- // for the textarea grow functions    
- // mySpecialVar = '\x3Cscript src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.10.3"> \x3C/script>\n\n' 
 
  mySpecialVar = '' 
     
@@ -386,82 +356,13 @@ async function myPoly(){
   
 /////////////////////////////////////// end Polyfill for Android ////////////////////////////////  
 
-//////////////////////////// Cell Phone Motion Code ///////////////////////////////////////////////
 
-
-
-
-
-
-async function myCellPhoneMotion(){
-  document.getElementById('mySpanExport').innerHTML = `Checking if using a cell phone!<br>`;
-  document.getElementById('mySpanExport').innerHTML += `/Android/i.test(navigator.userAgent): ${/Android/i.test(navigator.userAgent)}<br>`;
-  document.getElementById('mySpanExport').innerHTML += `/iPhone|iPod/i.test(navigator.userAgent): ${/iPhone|iPod/i.test(navigator.userAgent)}<br>`;
-  document.getElementById('mySpanExport').innerHTML += `navigator.userAgent: ${navigator.userAgent}<br>`
-   
-  if (typeof DeviceMotionEvent.requestPermission === 'function') {
-    try {
-      const permissionState = await DeviceMotionEvent.requestPermission();
-      if (permissionState === 'granted') {
-        window.addEventListener('devicemotion', handleMotionEvent);
-      //  myCellPhoneEvent = false
-        myCellPhoneOnce = true
-      }
-    } catch (error) {
-      console.log(error);
-      document.getElementById('mySpanResults').innerHTML = `Error: ${error}`;
-    }
-  } else {  // if things are already setup then just add the event listener
-    window.addEventListener('devicemotion', handleMotionEvent);
-  }
-}
-
-function handleMotionEvent(event) {
-if (myCellPhoneOnce){    
-  const { accelerationIncludingGravity } = event;
-  let { x, y, z } = accelerationIncludingGravity;
-   
-   if ( /Android/i.test(navigator.userAgent) ) {  // correct only if not on desktop setting. Android orientation is opposite apple
-      x *= -1;
-      y *= -1;
-      z *= -1;
-   }
-   
-  const formattedX = typeof x === 'number' ? x.toFixed(2) : 'NaN';
-  const formattedY = typeof y === 'number' ? y.toFixed(2) : 'NaN';
-  const formattedZ = typeof z === 'number' ? z.toFixed(2) : 'NaN';
-
- // document.getElementById('myDiv01').innerHTML = `iPhone x: ${formattedX}, y: ${formattedY}, z: ${formattedZ}`;
-   // Start collecting data if startTime is null
-   if (startTime === null) {
-     startTime = performance.now();
-   }
-   
-   // Calculate elapsed time in milliseconds
-   const elapsedTime = performance.now() - startTime;
-   
-   // Collect accelerometer data for 500 ms
-   if (elapsedTime < 410) {  // 500 ~ 30 samples, I want 25 samples
-     accelerometerData.push([formattedX, formattedY, formattedZ]);
-   }
-   else if (elapsedTime > 1000 ){} // estentially do nothing if the event handler does not get erased         
-   else {
-      // put the data in the main textarea
-      if (mySendFirstLine) { document.getElementById('myArea01').value = 'accelX,accelY,accelZ\r\n';  }   // prints first line for CSV saving
-        document.getElementById('myArea01').value += accelerometerData.join('\r\n')  // puts linefeed at end of data
-        myShowGraph() 
-        myCellPhoneOnce = false  
-        window.removeEventListener('devicemotion', handleMotionEvent); 
-      }
-   
-   } 
-}
 
 
 
 
 ////////////////////////////////////////////////////////  END OF GENERAL STUFF //////////////////////////////////////////////////////////////  
-////////////////////////////////////////////////////////  STRAT RAKWIRELESS STUFF //////////////////////////////////////////////////////////////  
+////////////////////////////////////////////////////////  START RAKWIRELESS STUFF //////////////////////////////////////////////////////////////  
 
 
 
