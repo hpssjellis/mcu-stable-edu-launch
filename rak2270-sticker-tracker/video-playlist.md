@@ -42,9 +42,9 @@ Full coverage of the main sticker tracker. Every video
 ![image](https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/88614bf7-9d71-4b27-bc9a-266105ce0506)
 
 
-1.
-1.
-1.
+1. Note: AT+NWM=?    switches between LoRa P2P and LoRaWan so it is very important
+1. Note: Sending to trackPac.io probably needs a set data format that I don't know, so you should chage the AppKey and setup your own Helium to another cloud site. I use free Adafruit.io 
+1. 
 1.
 1.
 1.
