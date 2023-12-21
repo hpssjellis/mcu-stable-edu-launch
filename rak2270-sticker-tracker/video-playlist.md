@@ -43,7 +43,7 @@ Full coverage of the main sticker tracker. Every video
 
 
 1. Note: AT+NWM=?    switches between LoRa P2P and LoRaWan so it is very important
-1. Note: Sending to trackPac.io probably needs a set data format that I don't know, so you should chage the AppKey and setup your own Helium to another cloud site. I use free Adafruit.io 
+1. Note: Sending to trackPac.io probably needs a set data format that I don't know, so you should chage the AppKey and setup your own Helium to another cloud site. I use free Adafruit.io See link on this page  [rak2270-lorawan-helium-to-adafruit-mqtt-cayenne-lpp](https://github.com/hpssjellis/mcu-stable-edu-launch/blob/main/rak2270-sticker-tracker/video-playlist.md#rak2270-lorawan-helium-to-adafruit-mqtt-cayenne-lpp)
 1. 
 1.
 1.
