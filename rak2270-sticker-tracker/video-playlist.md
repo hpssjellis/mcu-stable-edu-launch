@@ -84,9 +84,30 @@ Full coverage of the main sticker tracker. Every video
 
 # RAK2270 LoRa P2P receive Novel WebSerial Static webpage monitor
 
-# RAK2270 LoRaWan Helium to Adafruit MQTT Cayenne LPP
+# RAK2270 MQTT Cayenne LPP LoRaWan Helium to Adafruit 
+
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
+1. 
 
 # RAK2270 Machine Learning Acceleration (x,y,z)
+
+
+
+
+# RAK2270 Video tutorial dump
+All my videos in the order that they were taken. Just so that the other lists can be made from this list
 
 
 
