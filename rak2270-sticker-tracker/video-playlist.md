@@ -12,7 +12,7 @@ Video playlist notes:
 This playlist simply goes to the entry point for each of the other playlists tutorials
 
 
-# RAK2270StickerTracker (All short videos)
+# RAK2270 Sticker Tracker (Main Playlist)
 
 Full coverage of the main sticker tracker. Every video
 
@@ -76,13 +76,15 @@ Full coverage of the main sticker tracker. Every video
 
 # RAK2270 TTL USB
 
+# RAK2270 board pads solder wires.
+
 # RAKDAP1
 
 # RAK2270 LoRa P2P send
 
 # RAK2270 LoRa P2P receive 
 
-# RAK2270 LoRa P2P receive Novel WebSerial Static webpage monitor
+# RAK2270 LoRa P2P receive WebSerial webpage monitor
 
 # RAK2270 MQTT Cayenne LPP LoRaWan Helium to Adafruit 
 
