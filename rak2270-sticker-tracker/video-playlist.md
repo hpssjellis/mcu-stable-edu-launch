@@ -88,8 +88,8 @@ Full coverage of the main sticker tracker. Every video
 
 # RAK2270 MQTT Cayenne LPP LoRaWan Helium to Adafruit 
 
-1. 
-1. 
+1. Pre-requisits Need USB communication to program the RAK2270 Sticker Tracker
+1. Check ```AT+DevEui=?``` and ```AT+AppEui=?``` and  ```AT+AppKey=?``` If this is a fresh board change the ```AT+AppKey=#######``` 
 1. 
 1. 
 1. 
