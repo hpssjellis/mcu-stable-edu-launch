@@ -33,9 +33,9 @@ Full coverage of the main sticker tracker. Every video
 1. Now test and record on the following chart all the default data on the board especially the LoRaWan connections devEui, AppEui, AppKey as they have been set at the factory and if you change them and can't reset them you lose your access to TrackPac.io 
 ![image](https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/88614bf7-9d71-4b27-bc9a-266105ce0506)
 1. Note: AT+NWM=?    switches between LoRa P2P and LoRaWan so it is very important
-1. Note: Sending to trackPac.io probably needs a set data format that I don't know, so you should chage the AppKey and setup your own Helium to another cloud site. I use free Adafruit.io See link on this page  [rak2270-lorawan-helium-to-adafruit-mqtt-cayenne-lpp](https://github.com/hpssjellis/mcu-stable-edu-launch/blob/main/rak2270-sticker-tracker/video-playlist.md#rak2270-lorawan-helium-to-adafruit-mqtt-cayenne-lpp)  <hr> <br>
-1. 
-1.
+1. Note: Sending to trackPac.io probably needs a set data format that I don't know, so you should change the AppKey and setup your own Helium/Chirptstack or The Things Network LoRaWan sit that sends to another cloud site. I use free Adafruit.io See link on this page  [rak2270-lorawan-helium-to-adafruit-mqtt-cayenne-lpp](https://github.com/hpssjellis/mcu-stable-edu-launch/blob/main/rak2270-sticker-tracker/video-playlist.md#rak2270-lorawan-helium-to-adafruit-mqtt-cayenne-lpp)  <hr> <br>
+1. Let's switch to LoRa P2P ```AT+NWM=0``` Repeat the above steps for a second sticker tracker so that you can send LoRa P2P communicaiton back and forth
+1. When both sticker trackers are in  ```AT+NWM=0``` LoRa P2P mode try sending from one to the other. Set one to send only ```AT+PRECV=0``` and the other to receive only  ````AT+PREC=65534``` Then send data using ```AT+PSEND=314161``` (note: send even number of bytes since 2 bytes make a character.
 1.
 1.
 1.
