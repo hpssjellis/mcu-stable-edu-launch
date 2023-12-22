@@ -14,6 +14,8 @@ This playlist simply goes to the entry point for each of the other playlists tut
 
 # RAK2270 Sticker Tracker (Main Playlist)
 
+https://www.youtube.com/watch?v=Eye5zlfl3I8&list=PL57Dnr1H_egsfctG_K8AQ9uGhaLsTth6x
+
 Full coverage of the main sticker tracker. Every video
 
 1. Setup login at https://trackpac.io/  (Use the QR code to set it up your rak2270stickertracker. ( Do not cut the bottom off the sticker to activate it)
@@ -59,7 +61,10 @@ Full coverage of the main sticker tracker. Every video
 1.
 1.
 1.
-1.
+1. Pinout diagram
+<img width="538" alt="image" src="https://github.com/hpssjellis/mcu-stable-edu-launch/assets/5605614/dff30224-ca74-43d0-8418-3637a3723608">
+
+
 
 
 
