@@ -13,11 +13,12 @@ This playlist simply goes to the entry point for each of the other playlists tut
 
 
 # RAK2270 Sticker Tracker (Main Playlist)
-
+Live on Dec 22 2023
 https://www.youtube.com/watch?v=Eye5zlfl3I8&list=PL57Dnr1H_egsfctG_K8AQ9uGhaLsTth6x
 
 Full coverage of the main sticker tracker. Every video
-
+1. Intro to the entire project. Needs the ML webSerial site tutorial as well.
+1. AT Command intro
 1. Setup login at https://trackpac.io/  (Use the QR code to set it up your rak2270stickertracker. ( Do not cut the bottom off the sticker to activate it)
 1. removing label (I pull it down enough to show the battery terminals. Reminder don't destroy the qr code)
 1. unsolder positive terminal of battery
@@ -77,17 +78,20 @@ Full coverage of the main sticker tracker. Every video
 2. Coding it
 
 
-# RAK2270StickerTracker 3D Printined rig with PogoPins
+# RAK2270StickerTracker 3D Printined rig with PogoPins and TTL USB
+1. all the steps to get the rig working
 
-# RAK2270 TTL USB
+
 
 # RAK2270 board pads solder wires.
+1. sometimes it is better just to solder onto the pads and hot glue the wires into plae
 
 # RAKDAP1
+1. First thoughts
 
-# RAK2270 LoRa P2P send
+# RAK2270 LoRa P2P send and Receive
+1. software just to get P2P sending a receiving working. Probably good to have a ping pong code that does both
 
-# RAK2270 LoRa P2P receive 
 
 # RAK2270 LoRa P2P receive WebSerial webpage monitor
 
@@ -108,13 +112,11 @@ Full coverage of the main sticker tracker. Every video
 1. 
 1. 
 
-# RAK2270 Machine Learning Acceleration (x,y,z)
+# RAK2270 Machine Learning Acceleration (x,y,z) and LoRa P2P
 
 
 
 
-# RAK2270 Video tutorial dump
-All my videos in the order that they were taken. Just so that the other lists can be made from this list
 
 
 
