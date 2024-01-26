@@ -74,6 +74,16 @@ AT+PSEND=5b5c5d5e5f60    sends  [\]^_`
 AT+PSEND=1f20212223242526272829202a2b2c2d2e2f3031      sends  !"#$%&'()*+,-./01        Note the space for AT+PSEND=20     
 
 
+
+
+DAP  latest release
+
+https://github.com/particle-iot/DAPLink/releases/download/v0254.2/debugger_v02542.hex
+
+
+
+
+
 ```
 
 
