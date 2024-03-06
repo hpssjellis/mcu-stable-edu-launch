@@ -39,7 +39,9 @@ https://github.com/Mjrovai/XIAO-ESP32S3-Sense
 
 For ML sound try his file at   https://github.com/Mjrovai/XIAO-ESP32S3-Sense/blob/main/xiao_esp32s3_microphone/xiao_esp32s3_microphone.ino  it is for a downloaded edgeimpulse include file
 
+For the grove vision ai v2 this is essential
 
+https://www.hackster.io/mjrobot/computer-vision-at-the-edge-with-grove-vision-ai-module-v2-0003c7
 
 ## NOTE: For new programs hold boot button while plugging in the USB cable. I have a small 3D Printed clip to help hold the boot button
 
