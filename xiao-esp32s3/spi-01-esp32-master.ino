@@ -1,1 +1,46 @@
-dergt
+/* only for the XIAO-esp32 Boards
+
+
+
+Normal Master SPI connectivity
+which are normally default assigned
+
+#define MISO = D10;
+#define SCK = D9;
+#define MOSI = D8;
+#define SS = D7; // Slave select pin, can be any GPIO pin
+
+*/
+
+#include <SPI.h>
+
+#define MISO  D10
+#define SCK D9
+#define MOSI  D8
+#define SS  D7 // Slave select pin, can be any GPIO pin
+
+void setup() {
+  pinMode(SS, OUTPUT);
+  digitalWrite(SS, HIGH); 
+  SPI.begin(SCK, MISO, MOSI, SS);
+
+  Serial.begin(115200); // Initialize serial communication for debugging
+}
+
+void loop() {
+  digitalWrite(SS, LOW);  // Select the slave device by pulling chip select low
+ // delayMicroseconds(20);
+
+  byte dataToSend = 42; // Data to send to the slave
+  byte receivedData = SPI.transfer(dataToSend); // Send data and receive response
+
+ // delayMicroseconds(20);
+  digitalWrite(SS, HIGH);  // Deselect the slave device
+
+  Serial.print("Master sent: ");
+  Serial.print(dataToSend);
+  Serial.print(", Master received: ");
+  Serial.println(receivedData);
+
+  delay(1000); // Wait for 1 second before sending the next data
+}
