@@ -1,4 +1,4 @@
-
+// make sure arduino IDE OPI PSRAM enabled
 #include <ei-thumbs-up_inferencing.h>
 #include <Arduino.h> 
 
