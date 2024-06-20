@@ -1,3 +1,6 @@
+// needs the XIAO-SAMD borad to run 6 servos
+then send a digital high to D0 to activate the roboArm
+
 #include <Servo.h>
 
 Servo servo1;
@@ -39,26 +42,26 @@ void loop() {
   servo1.write(90);
   servo2.write(0);
   servo3.write(90);
-  servo4.write(90);
+  servo4.write(90);  //90
   servo5.write(0);
-  servo6.write(100);
+  servo6.write(10);
   delay(20);
 
   if (digitalRead(D0) == HIGH){
 
- // delay(1000); // Delay to allow servos to reach initial positions
-  servo1.write(45);
-    delay(1000); // Delay to allow servos to reach initial positions
-  servo2.write(170);
-    delay(1000); // Delay to allow servos to reach initial positions
-  servo4.write(160);
-    delay(1000); // Delay to allow servos to reach initial positions
-  servo5.write(0);
-  delay(1000); // Delay to allow servos to reach initial positions
-  servo3.write(120);
-    delay(1000); // D5elay to allow servos to reach initial positions
-  servo6.write(100);
-    delay(1000); // D5elay to allow servos to reach initial positions
+
+    servo1.write(45);
+    delay(1000); 
+    servo2.write(170);
+    delay(1000); 
+    servo4.write(160);   // 160
+    delay(1000); 
+    servo5.write(0);
+    delay(1000); 
+    servo3.write(120);
+    delay(1000); 
+    servo6.write(100);
+    delay(1000); 
 
 }
 
