@@ -54,91 +54,78 @@ Sercom0SPISlave SPISlave; // to use a different SERCOM, change this line and fin
 
 #define DEBUG // uncomment this line to print debug data to the serial bus
 #define INTERRUPT2BUFFER // uncomment this line to copy the data received in the Data Received Complete interrupt to a buffer to be used in the main loop
-//#define INTERRUPT2SERIAL // uncomment this line to print the data to the serial bus whenever the Data Received Complete interrupt is triggered
+#define INTERRUPT2SERIAL // uncomment this line to print the data to the serial bus whenever the Data Received Complete interrupt is triggered
 
 // initialize variables
 byte buf[1]; // initialize a buffer of 1 byte
+
+
+//volatile uint8_t myDataToSend;
+byte myDataToSend;
+byte mySentToPrint;
+
+byte myDataToReceive;
+byte myReceiveToPrint;
+
+
 
 void setup()
 {
   Serial.begin(115200);
   Serial.println("Serial started");
   SPISlave.SercomInit(SPISlave.MOSI_Pins::PA08, SPISlave.SCK_Pins::PA09, SPISlave.SS_Pins::PA10, SPISlave.MISO_Pins::PA11);
+  delay(3000);
+
   Serial.println("SERCOM0 SPI slave initialized");
 }
 
-void loop()
-{
-  #ifdef INTERRUPT2BUFFER
-    Serial.println(buf[0]); // Print latest data written into the buffer by the interrupt
-    delay(1); // Delay of 1 ms
-  #endif
-  #ifdef INTERRUPT2SERIAL
-    delay(1000); // Delay of 1 s to keep the main loop running, while data is written to the serial every time the Data Received Interrupt is triggered
-  #endif
+void loop(){
+    mySentToPrint = myDataToSend;
+    myReceiveToPrint = myDataToReceive;
+    Serial.print("Slave Received from Master: ");
+    Serial.print(myReceiveToPrint, HEX); // Print received data
+    Serial.print(", Slave sent to Master: ");
+    Serial.println(mySentToPrint, HEX); // Print received data
+    Serial.println(); // Print received data
+
+    delay(2000);
+
+
 }
 
-void SERCOM0_Handler()
-/*
-Reference: Atmel-42181G-SAM-D21_Datasheet section 26.8.6 on page 503
-*/
-{ 
-  #ifdef DEBUG
-    Serial.println("In SPI Interrupt");
-  #endif
-  uint8_t data = 0;
-  data = (uint8_t)SERCOM0->SPI.DATA.reg;
+void SERCOM0_Handler(){ 
+
+  //uint8_t data = 0;
+  myDataToReceive = 0;
+  myDataToReceive = (uint8_t)SERCOM0->SPI.DATA.reg;
   uint8_t interrupts = SERCOM0->SPI.INTFLAG.reg; // Read SPI interrupt register
-  #ifdef DEBUG
-    Serial.print("Interrupt: "); Serial.println(interrupts);
-  #endif
-  
+ 
   // Slave Select Low interrupt
-  if (interrupts & (1 << 3)) // 1000 = bit 3 = SSL // page 503
-  {
-    #ifdef DEBUG
-      Serial.println("SPI Slave Select Low interupt");
-    #endif
+  if (interrupts & (1 << 3)){ // 1000 = bit 3 = SSL // page 503   
+
     SERCOM0->SPI.INTFLAG.bit.SSL = 1; // Clear Slave Select Low interrupt
   }
   
   // Data Received Complete interrupt: this is where the data is received, which is used in the main loop
-  if (interrupts & (1 << 2)) // 0100 = bit 2 = RXC // page 503
-  {
-    #ifdef DEBUG
-      Serial.println("SPI Data Received Complete interrupt");
-    #endif
-    data = SERCOM0->SPI.DATA.reg; // Read data register
+  if (interrupts & (1 << 2)) { // 0100 = bit 2 = RXC // page 503
+  
+    myDataToReceive = SERCOM0->SPI.DATA.reg; // Read data register
     SERCOM0->SPI.INTFLAG.bit.RXC = 1; // Clear Receive Complete interrupt
   }
   
   // Data Transmit Complete interrupt
-  if (interrupts & (1 << 1)) // 0010 = bit 1 = TXC // page 503
-  {
-    #ifdef DEBUG
-      Serial.println("SPI Data Transmit Complete interrupt");
-    #endif
+  if (interrupts & (1 << 1)) { // 0010 = bit 1 = TXC // page 503
+
     SERCOM0->SPI.INTFLAG.bit.TXC = 1; // Clear Transmit Complete interrupt
   }
   
   // Data Register Empty interrupt
   if (interrupts & (1 << 0)) // 0001 = bit 0 = DRE // page 503
   {
-    #ifdef DEBUG
-      Serial.println("SPI Data Register Empty interrupt");
-    #endif
-    SERCOM0->SPI.DATA.reg = 0xAA;
+
+    myDataToSend = 6;
+    SERCOM0->SPI.DATA.reg = myDataToSend;
   }
-  
-  #ifdef INTERRUPT2BUFFER
-    // Write data to buffer, to be used in main loop
-    buf[0] = data;
-  #endif
-  #ifdef INTERRUPT2SERIAL
-    // Print data received during the Data Receive Complete interrupt
-    char _data = data;
-    Serial.print("DATA: ");
-    Serial.println(_data); // Print received data
-  #endif
+
 
 }
