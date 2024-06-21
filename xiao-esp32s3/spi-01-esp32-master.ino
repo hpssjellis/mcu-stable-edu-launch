@@ -1,4 +1,6 @@
 /* only for the XIAO-esp32 Boards
+to send and receive data from the XIAO-SAMD21 
+board using the sercom module and the SercomSPISlave library
 
 
 
@@ -19,6 +21,9 @@ which are normally default assigned
 #define MOSI  D8
 #define SS  D7 // Slave select pin, can be any GPIO pin
 
+byte myDataToSend;
+byte myDataToReceive;
+
 void setup() {
   pinMode(SS, OUTPUT);
   digitalWrite(SS, HIGH); 
@@ -31,16 +36,16 @@ void loop() {
   digitalWrite(SS, LOW);  // Select the slave device by pulling chip select low
  // delayMicroseconds(20);
 
-  byte dataToSend = 42; // Data to send to the slave
-  byte receivedData = SPI.transfer(dataToSend); // Send data and receive response
+  myDataToSend = 3; // Data to send to the slave
+  myDataToReceive = SPI.transfer(myDataToSend); // Send data and receive response
 
  // delayMicroseconds(20);
   digitalWrite(SS, HIGH);  // Deselect the slave device
 
-  Serial.print("Master sent: ");
-  Serial.print(dataToSend);
-  Serial.print(", Master received: ");
-  Serial.println(receivedData);
+  Serial.print("Master sent to slave: ");
+  Serial.print(myDataToSend);
+  Serial.print(", Master received from slave: ");
+  Serial.println(myDataToReceive);
 
   delay(1000); // Wait for 1 second before sending the next data
 }
